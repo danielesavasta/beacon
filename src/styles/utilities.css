@@ -64,6 +64,8 @@
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-6);
+  padding-top: 0.45rem;
+  justify-content: center;
   font-size: var(--text-base);
   font-weight: var(--font-medium);
   border-radius: var(--radius-md);
@@ -84,13 +86,13 @@
 }
 
 .btn--secondary {
-  background-color: transparent;
-  color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-white);
   border-color: var(--color-primary);
 }
 
 .btn--secondary:hover {
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
   color: var(--color-white);
 }
 
@@ -169,7 +171,7 @@ h3{
 
 .main {
   background: var(--main-bg-image) no-repeat left 5rem;
-  background-size: 50rem;
+  background-size: 20rem;
   background-attachment: fixed;
   min-height: 90dvh;
 }

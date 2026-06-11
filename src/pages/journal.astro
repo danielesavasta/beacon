@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { getLangFromUrl, type Locale, useTranslations } from '../i18n/utils';
 import { getEntry } from 'astro:content';
+import '../styles/components/lightbox.css';
 
 export interface Props {
   lang?: Locale;
@@ -24,14 +25,144 @@ const days = entry?.data.days ?? [];
       <article class="journal-day">
         <h2>{item.day}</h2>
         <p>{item.description}</p>
-        <div class="journal-day__gallery">
-          {item.images.map((src) => (
-            <figure class="journal-day__item">
-              <img src={src} alt={item.day} loading="lazy" decoding="async" />
-            </figure>
-          ))}
-        </div>
+        {item.images.length > 0 && (
+          <div
+            class="journal-day__gallery"
+            data-images={JSON.stringify(item.images)}
+          >
+            {item.images.map((src, i) => (
+              <figure class="journal-day__item">
+                <img
+                  src={src}
+                  alt={item.day}
+                  data-index={i}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            ))}
+          </div>
+        )}
       </article>
     ))}
   </section>
+
+  <dialog
+    id="lightbox"
+    class="lightbox"
+    aria-modal="true"
+    aria-label={t('gallery.label')}
+  >
+    <div class="lightbox__inner">
+      <button class="lightbox__close" id="lightbox-close" aria-label={t('gallery.close')}>✕</button>
+      <div class="lightbox__img-wrap">
+        <img class="lightbox__img" id="lightbox-img" src="" alt="" />
+      </div>
+      <div class="lightbox__controls">
+        <div class="lightbox__dots" id="lightbox-dots" role="tablist" aria-label={t('gallery.label')}></div>
+        <button
+          class="lightbox__play"
+          id="lightbox-play"
+          aria-label={t('gallery.play')}
+          data-label-play={t('gallery.play')}
+          data-label-stop={t('gallery.stop')}
+        >▶</button>
+      </div>
+    </div>
+  </dialog>
 </Base>
+
+<script>
+  const dialog = document.getElementById('lightbox') as HTMLDialogElement;
+  const imgEl = document.getElementById('lightbox-img') as HTMLImageElement;
+  const closeBtn = document.getElementById('lightbox-close') as HTMLButtonElement;
+  const dotsEl = document.getElementById('lightbox-dots') as HTMLDivElement;
+  const playBtn = document.getElementById('lightbox-play') as HTMLButtonElement;
+
+  let images: string[] = [];
+  let current = 0;
+  let timer: ReturnType<typeof setInterval> | null = null;
+
+  document.querySelectorAll<HTMLElement>('.journal-day__gallery').forEach((gallery) => {
+    gallery.addEventListener('click', (e) => {
+      const fig = (e.target as Element).closest('.journal-day__item') as HTMLElement | null;
+      if (!fig) return;
+      images = JSON.parse(gallery.dataset.images ?? '[]');
+      if (!images.length) return;
+      const img = fig.querySelector('img');
+      current = img ? Number(img.dataset.index ?? 0) : 0;
+      openLightbox();
+    });
+  });
+
+  function openLightbox() {
+    renderDots();
+    updateImage();
+    dialog.showModal();
+    closeBtn.focus();
+  }
+
+  function updateImage() {
+    imgEl.src = images[current];
+    imgEl.alt = '';
+    dotsEl.querySelectorAll<HTMLButtonElement>('.lightbox__dot').forEach((dot, i) => {
+      const active = i === current;
+      dot.classList.toggle('lightbox__dot--active', active);
+      dot.setAttribute('aria-selected', String(active));
+    });
+  }
+
+  function renderDots() {
+    dotsEl.innerHTML = '';
+    images.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'lightbox__dot' + (i === current ? ' lightbox__dot--active' : '');
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-selected', String(i === current));
+      dot.setAttribute('aria-label', String(i + 1));
+      dot.addEventListener('click', () => { current = i; updateImage(); });
+      dotsEl.appendChild(dot);
+    });
+  }
+
+  function navigate(dir: number) {
+    current = (current + dir + images.length) % images.length;
+    updateImage();
+  }
+
+  closeBtn.addEventListener('click', () => dialog.close());
+
+  dialog.addEventListener('close', stopPlay);
+
+  dialog.addEventListener('keydown', (e: KeyboardEvent) => {
+    if (e.key === 'ArrowRight') navigate(1);
+    if (e.key === 'ArrowLeft') navigate(-1);
+  });
+
+  dialog.addEventListener('click', (e: MouseEvent) => {
+    if (e.target === dialog) dialog.close();
+  });
+
+  playBtn.addEventListener('click', () => {
+    if (timer) {
+      stopPlay();
+    } else {
+      startPlay();
+    }
+  });
+
+  function startPlay() {
+    timer = setInterval(() => navigate(1), 3000);
+    playBtn.textContent = '⏸';
+    playBtn.setAttribute('aria-label', playBtn.dataset.labelStop ?? 'Stop');
+  }
+
+  function stopPlay() {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+    playBtn.textContent = '▶';
+    playBtn.setAttribute('aria-label', playBtn.dataset.labelPlay ?? 'Play');
+  }
+</script>

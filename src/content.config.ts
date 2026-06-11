@@ -32,7 +32,7 @@ export const collections = {
         z.object({
           day: z.string(),
           description: z.string(),
-          images: z.array(z.string()).min(1),
+          images: z.array(z.string()).default([]),
         })
       ).default([]),
     }),

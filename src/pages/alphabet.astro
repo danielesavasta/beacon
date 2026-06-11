@@ -1,0 +1,205 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/components/alphabet.css';
+import { getLangFromUrl, type Locale, useTranslations } from '../i18n/utils';
+
+export interface Props {
+  lang?: Locale;
+}
+
+const lang = (Astro.props.lang ?? getLangFromUrl(Astro.url)) as Locale;
+const t = useTranslations(lang);
+
+const values = ['Dignity', 'Liberty', 'Solidarity', 'Justice', 'Citizenship', 'Equality'];
+
+type AlphaEntry = { l: string; word: string; lang: string; value: string };
+
+const latin: AlphaEntry[] = [
+  { l: 'A', word: 'Αξιοπρέπεια',        lang: 'Greek (el)',          value: 'Dignity' },
+  { l: 'B', word: 'Brīvība',             lang: 'Latvian (lv)',        value: 'Liberty' },
+  { l: 'C', word: 'Ciudadanía',          lang: 'Spanish (es)',        value: 'Citizenship' },
+  { l: 'C', word: 'Citoyenneté',         lang: 'French (fr)',         value: 'Citizenship' },
+  { l: 'C', word: 'Cittadinanza',        lang: 'Italian (it)',        value: 'Citizenship' },
+  { l: 'D', word: 'Dignité',             lang: 'French (fr)*',        value: 'Dignity' },
+  { l: 'D', word: 'Dinjità',             lang: 'Maltese (mt)',        value: 'Dignity' },
+  { l: 'D', word: 'Dínit',              lang: 'Irish (ga)',           value: 'Dignity' },
+  { l: 'D', word: 'Důstojnost',          lang: 'Czech (cs)',          value: 'Dignity' },
+  { l: 'D', word: 'Dôstojnosť',          lang: 'Slovak (sk)',         value: 'Dignity' },
+  { l: 'E', word: 'Enakost',             lang: 'Slovenian (sl)',      value: 'Equality' },
+  { l: 'E', word: 'Égalité',             lang: 'French (fr)*',        value: 'Equality' },
+  { l: 'F', word: 'Frihed',              lang: 'Danish (da)',         value: 'Liberty' },
+  { l: 'G', word: 'Gerechtigkeit',       lang: 'German (de)',         value: 'Justice' },
+  { l: 'G', word: 'Godność',             lang: 'Polish (pl)',         value: 'Dignity' },
+  { l: 'H', word: 'Hodnota',             lang: 'Czech / Slovak',      value: 'Value †' },
+  { l: 'I', word: 'Igazságosság',        lang: 'Hungarian (hu)',      value: 'Justice' },
+  { l: 'I', word: 'Ihmisarvo',           lang: 'Finnish (fi)',        value: 'Dignity' },
+  { l: 'J', word: 'Justiça',             lang: 'Portuguese (pt)',     value: 'Justice' },
+  { l: 'J', word: 'Justiție',            lang: 'Romanian (ro)',       value: 'Justice' },
+  { l: 'K', word: 'Kodakondsus',         lang: 'Estonian (et)',       value: 'Citizenship' },
+  { l: 'L', word: 'Laisvė',              lang: 'Lithuanian (lt)',     value: 'Liberty' },
+  { l: 'L', word: 'Liberté',             lang: 'French (fr)*',        value: 'Liberty' },
+  { l: 'M', word: 'Medborgarskap',       lang: 'Swedish (sv)',        value: 'Citizenship' },
+  { l: 'N', word: 'Naasteliefde',        lang: 'Dutch (nl)',          value: 'Neighbour-love †' },
+  { l: 'O', word: 'Orumas',              lang: 'Lithuanian (lt)*',    value: 'Dignity' },
+  { l: 'P', word: 'Pravda',              lang: 'Croatian (hr)',       value: 'Justice' },
+  { l: 'Q', word: 'Qualidade',           lang: 'Portuguese (pt)*',   value: 'Quality †' },
+  { l: 'R', word: 'Rechtvaardigheid',    lang: 'Dutch (nl)*',         value: 'Justice' },
+  { l: 'S', word: 'Saoirse',             lang: 'Irish (ga)*',         value: 'Liberty' },
+  { l: 'S', word: 'Solidaarsus',         lang: 'Estonian (et)*',      value: 'Solidarity' },
+  { l: 'S', word: 'Solidariedade',       lang: 'Portuguese (pt)*',   value: 'Solidarity' },
+  { l: 'S', word: 'Solidarita',          lang: 'Czech (cs)*',         value: 'Solidarity' },
+  { l: 'S', word: 'Solidarita',          lang: 'Slovak (sk)*',        value: 'Solidarity' },
+  { l: 'S', word: 'Solidarnost',         lang: 'Croatian (hr)*',      value: 'Solidarity' },
+  { l: 'S', word: 'Solidarnost',         lang: 'Slovenian (sl)*',     value: 'Solidarity' },
+  { l: 'S', word: 'Solidarność',         lang: 'Polish (pl)*',        value: 'Solidarity' },
+  { l: 'S', word: 'Solidaritet',         lang: 'Danish (da)*',        value: 'Solidarity' },
+  { l: 'S', word: 'Solidaritet',         lang: 'Swedish (sv)*',       value: 'Solidarity' },
+  { l: 'S', word: 'Saoránacht',           lang: 'Irish (irl)',         value: 'Citizenship' },
+  { l: 'S', word: 'Solidarité',          lang: 'French (fr)*',        value: 'Solidarity' },
+  { l: 'S', word: 'Solidarietà',         lang: 'Italian (it)*',       value: 'Solidarity' },
+  { l: 'S', word: 'Solidarumas',         lang: 'Lithuanian (lt)*',    value: 'Solidarity' },
+  { l: 'T', word: 'Taisnīgums',          lang: 'Latvian (lv)*',       value: 'Justice' },
+  { l: 'U', word: 'Uguaglianza',          lang: 'Italian (ita)',       value: 'Equality' },
+  { l: 'V', word: 'Võrdõiguslikkus',     lang: 'Estonian (et)*',      value: 'Equality' },
+  { l: 'V', word: 'Värdighet',           lang: 'Swedish (sv)*',       value: 'Dignity' },
+  { l: 'W', word: 'Waardigheid',         lang: 'Dutch (nl)*',         value: 'Dignity' },
+  { l: 'W', word: 'Wolność',             lang: 'Polish (pl)*',        value: 'Liberty' },
+  { l: 'X', word: 'Xenofilia',           lang: 'Portuguese (pt)*',   value: 'Openness †' },
+  { l: 'Y', word: 'Yhteisvastuullisuus', lang: 'Finnish (fi)*',       value: 'Solidarity' },
+  { l: 'Z', word: 'Zusammenhalt',        lang: 'German (de)*',        value: 'Cohesion †' },
+];
+
+const cyrillic: AlphaEntry[] = [
+  { l: 'Г', word: 'Гражданство',    lang: 'Bulgarian (bg)',  value: 'Citizenship' },
+  { l: 'Д', word: 'Достойнство',    lang: 'Bulgarian (bg)*', value: 'Dignity' },
+  { l: 'Р', word: 'Равенство',      lang: 'Bulgarian (bg)*', value: 'Equality' },
+  { l: 'С', word: 'Свобода',        lang: 'Bulgarian (bg)*', value: 'Liberty' },
+  { l: 'С', word: 'Солидарност',    lang: 'Bulgarian (bg)*', value: 'Solidarity' },
+  { l: 'С', word: 'Справедливост',  lang: 'Bulgarian (bg)*', value: 'Justice' },
+];
+
+const greek: AlphaEntry[] = [
+  { l: 'Α', word: 'Αλληλεγγύη',  lang: 'Greek (el)',  value: 'Solidarity' },
+  { l: 'Α', word: 'Αξιοπρέπεια', lang: 'Greek (el)*', value: 'Dignity' },
+  { l: 'Δ', word: 'Δικαιοσύνη',  lang: 'Greek (el)*', value: 'Justice' },
+  { l: 'Ε', word: 'Ελευθερία',   lang: 'Greek (el)*', value: 'Liberty' },
+  { l: 'Η', word: 'Ηθαγένεια',   lang: 'Greek (el)*', value: 'Citizenship' },
+  { l: 'Ι', word: 'Ισότητα',     lang: 'Greek (el)*', value: 'Equality' },
+];
+
+const sortedLatin = [...latin].sort((a, b) => a.l.localeCompare(b.l, 'en'));
+const sortedCyrillic = [...cyrillic].sort((a, b) => a.l.localeCompare(b.l, 'bg'));
+const sortedGreek = [...greek].sort((a, b) => a.l.localeCompare(b.l, 'el'));
+---
+
+<Base title={t('alphabet.title')} lang={lang} t={t} mainClass="alphabet-page">
+  <div class="page-header container">
+    <h1>{t('alphabet.title')}</h1>
+  </div>
+
+  <div class="alphabet-header container">
+    <p class="alphabet-header__subtitle">{t('alphabet.subtitle')}</p>
+    <div class="values-filter" role="group" aria-label="Filter by value">
+      {values.map(v => (
+        <button class="values-filter__btn" data-value={v} type="button">{v}</button>
+      ))}
+    </div>
+  </div>
+
+  <section class="script-section section container">
+    <div class="script-section-header">
+      <span class="script-pill">{t('alphabet.latin_script')}</span>
+      <h2>{t('alphabet.latin_subtitle')}</h2>
+    </div>
+    <div class="alpha-cards" id="latin-cards">
+      {sortedLatin.map(e => (
+        <div class="alpha-card" data-value={e.value}>
+          <div class="alpha-card__inner">
+            <div class="alpha-card__front">
+              <div class="alpha-letter">{e.l}</div>
+              <div class="alpha-word">{e.word}</div>
+              <div class="alpha-lang">{e.lang}</div>
+              <span class="alpha-badge">{e.value}</span>
+            </div>
+            <div class="alpha-card__back"></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="script-section section container">
+    <div class="script-section-header">
+      <span class="script-pill">{t('alphabet.cyrillic_script')}</span>
+      <h2>{t('alphabet.cyrillic_subtitle')}</h2>
+    </div>
+    <div class="alpha-cards" id="cyrillic-cards">
+      {sortedCyrillic.map(e => (
+        <div class="alpha-card" data-value={e.value}>
+          <div class="alpha-card__inner">
+            <div class="alpha-card__front">
+              <div class="alpha-letter">{e.l}</div>
+              <div class="alpha-word">{e.word}</div>
+              <div class="alpha-lang">{e.lang}</div>
+              <span class="alpha-badge">{e.value}</span>
+            </div>
+            <div class="alpha-card__back"></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="script-section section container">
+    <div class="script-section-header">
+      <span class="script-pill">{t('alphabet.greek_script')}</span>
+      <h2>{t('alphabet.greek_subtitle')}</h2>
+    </div>
+    <div class="alpha-cards" id="greek-cards">
+      {sortedGreek.map(e => (
+        <div class="alpha-card" data-value={e.value}>
+          <div class="alpha-card__inner">
+            <div class="alpha-card__front">
+              <div class="alpha-letter">{e.l}</div>
+              <div class="alpha-word">{e.word}</div>
+              <div class="alpha-lang">{e.lang}</div>
+              <span class="alpha-badge">{e.value}</span>
+            </div>
+            <div class="alpha-card__back"></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <div class="alpha-footnote container">
+    <strong>{t('alphabet.footnote_label')} —</strong>
+    Entries marked * indicate a language appearing more than once.
+    Letters A, H, N, Q, X, Z have no direct match among the six EU values in any of the 24 official EU languages;
+    the words shown for those letters are kindred concepts from the broader European values tradition,
+    chosen to complete the alphabet:
+    <strong>A</strong> Αξιοπρέπεια (Greek, Dignity — kept from previous version);
+    <strong>H</strong> Hodnota (Czech / Slovak, "Value");
+    <strong>N</strong> Naasteliefde (Dutch, "Love of one's neighbour");
+    <strong>Q</strong> Qualidade (Portuguese, "Quality");
+    <strong>X</strong> Xenofilia (Portuguese, "Love of the foreign / openness to others");
+    <strong>Z</strong> Zusammenhalt (German, "Cohesion / solidarity").
+    Within each script, cards are sorted alphabetically by their initial letter.
+    All 24 official languages of the European Union are represented at least once.
+  </div>
+</Base>
+
+<script>
+  const btns = document.querySelectorAll<HTMLButtonElement>('.values-filter__btn');
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('active');
+      const active = [...btns]
+        .filter(b => b.classList.contains('active'))
+        .map(b => b.dataset.value as string);
+      document.querySelectorAll<HTMLElement>('.alpha-card').forEach(card => {
+        card.hidden = active.length > 0 && !active.includes(card.dataset.value as string);
+      });
+    });
+  });
+</script>

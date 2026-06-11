@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import '../styles/components/card.css';
 import { getLangFromUrl, type Locale, useTranslations } from '../i18n/utils';
 import { getEntry, render } from 'astro:content';
 
@@ -25,11 +26,11 @@ const sessions = entry.data.sessions;
     <Content />
   </section>
 
-  <section class="section container prose">
-    <div class="lectures-grid">
+  <section class="section container">
+    <div class="card-grid">
       {sessions.map((session) => (
-        <article class="lecture-card">
-          <div class="lecture-card__embed">
+        <article class="card">
+          <div class="lecture-embed">
             <iframe
               src={`https://www.youtube-nocookie.com/embed/${session.youtubeId}`}
               title={session.label}
@@ -38,10 +39,10 @@ const sessions = entry.data.sessions;
               loading="lazy"
             ></iframe>
           </div>
-          <div class="lecture-card__body">
-            <h2 class="lecture-card__title">{session.label}</h2>
+          <div class="card__body">
+            <h2 class="card__title">{session.label}</h2>
             {session.daily && session.daily.length > 0 && (
-              <ul class="lecture-card__daily" role="list">
+              <ul class="card__meta" role="list">
                 {session.daily.map((item) => (
                   <li>{item}</li>
                 ))}

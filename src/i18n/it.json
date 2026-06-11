@@ -42,6 +42,13 @@
   "journal": {
     "title": "Diario"
   },
+  "gallery": {
+    "label": "Galleria fotografica",
+    "close": "Chiudi galleria",
+    "play": "Avvia presentazione",
+    "stop": "Ferma presentazione",
+    "imageOf": "Immagine {current} di {total}"
+  },
   "lectures": {
     "title": "Lezioni",
     "online1": "Sessione online #1",
@@ -62,6 +69,18 @@
   "footer": {
     "credits": "BIP — Blended Intensive Programme",
     "rights": "Tutti i diritti riservati"
+  },
+  "alphabet": {
+    "title": "Alfabeto dei Valori Europei",
+    "description": "Un ABC dei valori europei in 24 lingue ufficiali dell'UE — scritture latina, cirillica e greca.",
+    "subtitle": "24 lingue ufficiali UE · Latino · Cirillico · Greco",
+    "latin_script": "Scrittura latina",
+    "latin_subtitle": "A – Z · completo",
+    "cyrillic_script": "Scrittura cirillica",
+    "cyrillic_subtitle": "Bulgaro",
+    "greek_script": "Scrittura greca",
+    "greek_subtitle": "Greco",
+    "footnote_label": "Note"
   },
   "card": {
     "readMore": "Leggi di più"

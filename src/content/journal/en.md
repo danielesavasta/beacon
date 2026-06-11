@@ -16,26 +16,19 @@ days:
   - day: "Tuesday 9 June"
     description: "Template and character concept activities, followed by free work and presentations."
     images:
-      - "/journal/day2/day2-01.jpg"
-      - "/journal/day2/day2-02.jpg"
-      - "/journal/day2/day2-03.jpg"
+      - "/beacon/journal/day2/WhatsApp%20Image%202026-06-10%20at%2015.07.45%20%288%29.jpeg"
+      - "/beacon/journal/day2/WhatsApp%20Image%202026-06-10%20at%2015.19.03%20%281%29.jpeg"
+      - "/beacon/journal/day2/WhatsApp%20Image%202026-06-10%20at%2015.19.03.jpeg"
+      - "/beacon/journal/day2/WhatsApp%20Image%202026-06-10%20at%2016.00.30.jpeg"
+      - "/beacon/journal/day2/WhatsApp%20Image%202026-06-10%20at%2016.07.35.jpeg"
   - day: "Wednesday 10 June"
     description: "Operational day with free work sessions and character concept review."
-    images:
-      - "/journal/day3/day3-01.jpg"
-      - "/journal/day3/day3-02.jpg"
-      - "/journal/day3/day3-03.jpg"
+    images: []
   - day: "Thursday 11 June"
     description: "Production-focused day with dedicated animation presentations."
-    images:
-      - "/journal/day4/day4-01.jpg"
-      - "/journal/day4/day4-02.jpg"
-      - "/journal/day4/day4-03.jpg"
+    images: []
   - day: "Friday 12 June"
     description: "Final day with closing presentations, program wrap-up, and evening concert at the museum."
-    images:
-      - "/journal/day5/day5-01.jpg"
-      - "/journal/day5/day5-02.jpg"
-      - "/journal/day5/day5-03.jpg"
+    images: []
 
 ---

@@ -42,6 +42,13 @@
   "journal": {
     "title": "Dziennik"
   },
+  "gallery": {
+    "label": "Galeria zdjęć",
+    "close": "Zamknij galerię",
+    "play": "Uruchom pokaz",
+    "stop": "Zatrzymaj pokaz",
+    "imageOf": "Zdjęcie {current} z {total}"
+  },
   "lectures": {
     "title": "Wykłady",
     "online1": "Sesja online #1",
@@ -62,6 +69,18 @@
   "footer": {
     "credits": "BIP — Blended Intensive Programme",
     "rights": "Wszelkie prawa zastrzeżone"
+  },
+  "alphabet": {
+    "title": "Alfabet Wartości Europejskich",
+    "description": "ABC wartości europejskich w 24 oficjalnych językach UE — pismo łacińskie, cyrylica i greka.",
+    "subtitle": "24 oficjalne języki UE · Łacina · Cyrylica · Greka",
+    "latin_script": "Pismo łacińskie",
+    "latin_subtitle": "A – Z · pełny",
+    "cyrillic_script": "Pismo cyrylickie",
+    "cyrillic_subtitle": "Bułgarski",
+    "greek_script": "Pismo greckie",
+    "greek_subtitle": "Grecki",
+    "footnote_label": "Uwagi"
   },
   "card": {
     "readMore": "Czytaj więcej"

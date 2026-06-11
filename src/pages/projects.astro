@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import '../styles/components/card.css';
 import { getLangFromUrl, type Locale, useTranslations } from '../i18n/utils';
 import { getEntry, render } from 'astro:content';
 
@@ -9,6 +10,8 @@ export interface Props {
 
 const lang = (Astro.props.lang ?? getLangFromUrl(Astro.url)) as Locale;
 const t = useTranslations(lang);
+const base = import.meta.env.BASE_URL;
+const basePath = lang === 'en' ? base : `${base}${lang}/`;
 const entry = await getEntry('projects', lang);
 if (!entry) {
   throw new Error(`Missing projects content for locale: ${lang}`);
@@ -20,6 +23,17 @@ const { Content } = await render(entry);
   <div class="page-header container">
     <h1>{t('projects.title')}</h1>
   </div>
+  <section class="section container">
+    <div class="card-grid">
+      <article class="card">
+        <div class="card__body">
+          <h2 class="card__title">{t('alphabet.title')}</h2>
+          <p class="card__text">{t('alphabet.description')}</p>
+          <a class="btn btn--secondary" href={`${basePath}alphabet/`}>{t('projects.watch')}</a>
+        </div>
+      </article>
+    </div>
+  </section>
   <section class="section container prose">
     <Content />
   </section>

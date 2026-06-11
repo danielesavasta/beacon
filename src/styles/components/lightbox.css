@@ -1,0 +1,130 @@
+/* Clickable gallery items */
+.journal-day__item {
+  cursor: pointer;
+}
+
+.journal-day__item img {
+  pointer-events: none;
+}
+
+/* Lightbox */
+.lightbox {
+  border: none;
+  padding: 0;
+  background: transparent;
+  max-inline-size: 100vw;
+  max-block-size: 100dvh;
+  inline-size: 100vw;
+  block-size: 100dvh;
+  margin: 0;
+}
+
+.lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.92);
+}
+
+.lightbox__inner {
+  block-size: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: var(--space-4);
+}
+
+.lightbox__close {
+  position: absolute;
+  inset-block-start: var(--space-4);
+  inset-inline-end: var(--space-4);
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: opacity 0.15s;
+}
+
+.lightbox__close:hover {
+  opacity: 0.7;
+}
+
+.lightbox__close:focus-visible {
+  outline: 0.125rem solid #fff;
+  outline-offset: 0.125rem;
+}
+
+.lightbox__img-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: var(--space-8) var(--space-4);
+  max-inline-size: 100%;
+}
+
+.lightbox__img {
+  display: block;
+  max-inline-size: 90vw;
+  max-block-size: 75dvh;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+.lightbox__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding-block-end: var(--space-4);
+}
+
+.lightbox__dots {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.lightbox__dot {
+  inline-size: 0.5rem;
+  block-size: 0.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.lightbox__dot--active {
+  background: #fff;
+  transform: scale(1.4);
+}
+
+.lightbox__dot:focus-visible {
+  outline: 0.125rem solid #fff;
+  outline-offset: 0.25rem;
+}
+
+.lightbox__play {
+  background: none;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-3);
+  cursor: pointer;
+  font-size: var(--text-sm);
+  line-height: var(--leading-tight);
+  transition: border-color 0.15s, opacity 0.15s;
+}
+
+.lightbox__play:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.lightbox__play:focus-visible {
+  outline: 0.125rem solid #fff;
+  outline-offset: 0.125rem;
+}

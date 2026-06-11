@@ -48,17 +48,16 @@ const langPaths: Record<Locale, string> = {
   text-decoration: none;
   padding: var(--space-1) var(--space-2);
   border-radius: var(--radius-sm);
-  color: var(--color-text-muted);
   transition: color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .lang-switcher__link:hover {
-  color: var(--color-primary);
   background-color: var(--color-bg-subtle);
+  color: var(--color-header-text);
 }
 
 .lang-switcher__link.is-active {
-  color: var(--color-primary);
+  color: var(--color-secondary);
   font-weight: var(--font-bold);
 }
 </style>

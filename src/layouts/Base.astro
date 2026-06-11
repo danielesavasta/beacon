@@ -14,10 +14,11 @@ export interface Props {
   lang: Locale;
   t: (key: string) => string;
   hideHeaderLogo?: boolean;
+  mainClass?: string;
 }
 
 
-const { title, description = 'Beacon — Building a Visual Alphabet for the European Values | BIP 2024-1-IT02-KA131-HED-000197121-2', lang, t, hideHeaderLogo = false } = Astro.props;
+const { title, description = 'Beacon — Building a Visual Alphabet for the European Values | BIP 2024-1-IT02-KA131-HED-000197121-2', lang, t, hideHeaderLogo = false, mainClass } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const mainBackgroundImage = `url('${base}beacon_logo.svg')`;
 
@@ -37,7 +38,7 @@ const mainBackgroundImage = `url('${base}beacon_logo.svg')`;
     <link rel="alternate" hreflang="pl" href={`${base}pl/`} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" />
     <script is:inline>
       (() => {
         const storedTheme = localStorage.getItem('theme');
@@ -53,7 +54,7 @@ const mainBackgroundImage = `url('${base}beacon_logo.svg')`;
   <body>
     <a class="skip-link" href="#main-content">{lang === 'it' ? 'Vai al contenuto' : lang === 'en' ? 'Skip to content' : 'Przejdź do treści'}</a>
     <Header lang={lang} t={t} hideLogo={hideHeaderLogo} />
-    <main id="main-content" class:list={['main', { 'main--no-bg': hideHeaderLogo }]} style={`--main-bg-image: ${mainBackgroundImage};`}>
+    <main id="main-content" class:list={['main', { 'main--no-bg': hideHeaderLogo }, mainClass]} style={`--main-bg-image: ${mainBackgroundImage};`}>
       <slot />
     </main>
     <Footer lang={lang} t={t} />

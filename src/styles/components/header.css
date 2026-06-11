@@ -52,7 +52,7 @@
 }
 
 .site-nav__link:hover {
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 .site-nav__link:focus-visible {

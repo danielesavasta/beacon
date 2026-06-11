@@ -43,6 +43,13 @@
   "journal": {
     "title": "Journal"
   },
+  "gallery": {
+    "label": "Photo gallery",
+    "close": "Close gallery",
+    "play": "Start slideshow",
+    "stop": "Stop slideshow",
+    "imageOf": "Image {current} of {total}"
+  },
   "lectures": {
     "title": "Lectures",
     "online1": "Online session #1",
@@ -64,6 +71,18 @@
     "credits": "BIP — Blended Intensive Programme",
     "rights": "All rights reserved",
     "disclaimer": "Beacon is a Blended Intensive Programme (BIP) bringing together design students and academics from nine partner universities across Europe and Latin America. Over an online phase and an in-person week in Palermo, participants explore picture language as a shared visual communication tool. The project code is **BIP 2024-1-IT02-KA131-HED-000197121-2**, funded by the Erasmus+ programme."
+  },
+  "alphabet": {
+    "title": "European Values Alphabet",
+    "description": "An ABC of European values in 24 official EU languages — Latin, Cyrillic and Greek scripts.",
+    "subtitle": "24 official EU languages · Latin · Cyrillic · Greek",
+    "latin_script": "Latin script",
+    "latin_subtitle": "A – Z · complete",
+    "cyrillic_script": "Cyrillic script",
+    "cyrillic_subtitle": "Bulgarian",
+    "greek_script": "Greek script",
+    "greek_subtitle": "Greek",
+    "footnote_label": "Notes"
   },
   "card": {
     "readMore": "Read more"
