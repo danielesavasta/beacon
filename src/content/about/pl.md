@@ -50,7 +50,7 @@ partners:
     url: "https://sopocka.edu.pl/sopot-welcome/"
     people:
       - "Magdalena Berlińska"
-      - "Beata"
+      - "Beata Liedtk"
     students:
       - "Anna Arendt"
       - "Iga Kwiek"
