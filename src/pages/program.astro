@@ -1,0 +1,79 @@
+---
+import Base from '../layouts/Base.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getEntry, render } from 'astro:content';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const entry = await getEntry('program', lang);
+const { Content } = await render(entry);
+---
+
+<Base title={t('program.title')} lang={lang} t={t}>
+  <div class="page-header container">
+    <h1>{t('program.title')}</h1>
+  </div>
+  <section class="section container prose">
+    <Content />
+  </section>
+</Base>
+
+<style>
+.page-header {
+  padding-block: var(--space-12) var(--space-8);
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.section {
+  padding-block: var(--space-12);
+}
+
+.section h3 {
+  margin-block: var(--space-8) var(--space-4);
+}
+
+.mt {
+  margin-block-start: var(--space-8);
+}
+
+.schedule-table {
+  inline-size: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  margin-block-start: var(--space-4);
+}
+
+.schedule-table th,
+.schedule-table td {
+  text-align: start;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.schedule-table th {
+  font-weight: var(--font-bold);
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.schedule-table td:first-child {
+  white-space: nowrap;
+  font-weight: var(--font-medium);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-block-start: var(--space-4);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.schedule-table--week {
+  min-inline-size: 50rem;
+}
+</style>

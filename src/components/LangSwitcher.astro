@@ -1,0 +1,66 @@
+---
+import { type Locale, locales } from '../i18n/utils';
+
+export interface Props {
+  currentLang: Locale;
+  currentPath: string;
+  t: (key: string) => string;
+}
+
+const { currentLang, t } = Astro.props;
+
+const langLabels: Record<Locale, string> = {
+  it: 'IT',
+  en: 'EN',
+  pl: 'PL',
+};
+
+// Build alternate paths for each locale
+const base = import.meta.env.BASE_URL;
+const langPaths: Record<Locale, string> = {
+  en: base,
+  it: `${base}it/`,
+  pl: `${base}pl/`,
+};
+---
+
+<div class="lang-switcher" role="navigation" aria-label={t('lang.switch')}>
+  {locales.map((locale) => (
+    <a
+      class:list={['lang-switcher__link', { 'is-active': locale === currentLang }]}
+      href={langPaths[locale]}
+      hreflang={locale}
+      aria-current={locale === currentLang ? 'true' : undefined}
+    >
+      {langLabels[locale]}
+    </a>
+  ))}
+</div>
+
+<style>
+.lang-switcher {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.lang-switcher__link {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  text-decoration: none;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.lang-switcher__link:hover {
+  color: var(--color-primary);
+  background-color: var(--color-bg-subtle);
+}
+
+.lang-switcher__link.is-active {
+  color: var(--color-primary);
+  font-weight: var(--font-bold);
+}
+</style>

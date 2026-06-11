@@ -1,0 +1,26 @@
+.site-footer {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding-block: var(--space-8);
+  margin-block-start: var(--space-16);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.site-footer__credits {
+  font-weight: var(--font-bold);
+  font-size: var(--text-base);
+  max-inline-size: none;
+}
+
+.site-footer__rights {
+  font-size: var(--text-sm);
+  opacity: 0.8;
+  max-inline-size: none;
+}

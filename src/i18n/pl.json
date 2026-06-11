@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "label": "Główna nawigacja",
+    "home": "Strona główna",
+    "program": "Program",
+    "lectures": "Wykłady",
+    "projects": "Projekty",
+    "about": "O projekcie",
+    "partners": "Partnerzy",
+    "identity": "Identyfikacja",
+    "toggle": "Otwórz/zamknij menu"
+  },
+  "lang": {
+    "switch": "Zmień język",
+    "it": "Italiano",
+    "en": "English",
+    "pl": "Polski"
+  },
+  "hero": {
+    "title": "Beacon — Budowanie Wizualnego Alfabetu dla Wartości Europejskich",
+    "subtitle": "BIP 2024-1-IT02-KA131-HED-000197121-2 · Intensywny program blended, który bada język obrazkowy jako narzędzie komunikacji uniwersalnej.",
+    "cta": "Poznaj program"
+  },
+  "home": {
+    "intro": "Intensywny program blended, który bada język obrazkowy jako narzędzie komunikacji uniwersalnej.",
+    "keywords": "Słowa kluczowe",
+    "partners_heading": "Uczelnie partnerskie",
+    "program_heading": "Program",
+    "lectures_heading": "Wykłady",
+    "projects_heading": "Projekty"
+  },
+  "program": {
+    "title": "Program",
+    "online": "Sesja online",
+    "inperson": "Sesja stacjonarna",
+    "timetable": "Tygodniowy plan zajęć"
+  },
+  "lectures": {
+    "title": "Wykłady",
+    "online1": "Sesja online #1",
+    "online2": "Sesja online #2",
+    "online3": "Sesja online #3",
+    "watch": "Obejrzyj nagranie"
+  },
+  "projects": {
+    "title": "Projekty",
+    "placeholder": "Projekty studentów zostaną opublikowane po sesji stacjonarnej."
+  },
+  "about": {
+    "title": "O projekcie",
+    "description": "BIP to program współpracy międzynarodowej z udziałem uczelni z Włoch, Turcji, Polski, Argentyny i Chile.",
+    "partners_title": "Partnerzy",
+    "identity_title": "Identyfikacja wizualna"
+  },
+  "footer": {
+    "credits": "BIP — Blended Intensive Programme",
+    "rights": "Wszelkie prawa zastrzeżone"
+  },
+  "card": {
+    "readMore": "Czytaj więcej"
+  }
+}

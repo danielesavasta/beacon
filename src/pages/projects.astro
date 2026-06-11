@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getEntry, render } from 'astro:content';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const entry = await getEntry('projects', lang);
+const { Content } = await render(entry);
+---
+
+<Base title={t('projects.title')} lang={lang} t={t}>
+  <div class="page-header container">
+    <h1>{t('projects.title')}</h1>
+  </div>
+  <section class="section container prose">
+    <Content />
+  </section>
+</Base>
+
+<style>
+.page-header { padding-block: var(--space-12) var(--space-8); border-bottom: var(--border-width) solid var(--color-border); }
+.section { padding-block: var(--space-12); }
+.placeholder {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  font-style: italic;
+  padding: var(--space-12);
+  border: 0.125rem dashed var(--color-border);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+</style>

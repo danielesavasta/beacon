@@ -1,0 +1,57 @@
+---
+import Base from '../../layouts/Base.astro';
+import { useTranslations } from '../../i18n/utils';
+import { getEntry, render } from 'astro:content';
+const lang = 'pl' as const;
+const t = useTranslations(lang);
+const entry = await getEntry('about', lang);
+const { Content } = await render(entry);
+const partners = entry.data.partners;
+const base = import.meta.env.BASE_URL;
+---
+
+<Base title={t('about.title')} lang={lang} t={t}>
+  <div class="page-header container">
+    <h1>{t('about.title')}</h1>
+    <div class="about-intro prose"><Content /></div>
+  </div>
+  <section class="section container" aria-labelledby="partners-heading">
+    <h2 id="partners-heading">{t('about.partners_title')}</h2>
+    <div class="partners-grid">
+      {partners.map(p => (
+        <article class="partner-card">
+          <div class="partner-card__header">
+            {p.logo && <img class="partner-card__logo" src={`${base}partners/${p.logo}`} alt={p.name} />}
+            <h3 class="partner-card__name">{p.name}</h3>
+            {p.location && <p class="partner-card__location text-muted">{p.location}</p>}
+            {p.url && <a class="partner-card__link" href={p.url} target="_blank" rel="noopener noreferrer">{p.url.replace(/^https?:\/\//, '')}</a>}
+          </div>
+          {p.people.length > 0 && <ul class="partner-card__people" role="list">{p.people.map(person => <li>{person}</li>)}</ul>}
+          {p.students.length > 0 && (
+            <details class="partner-card__students">
+              <summary>Studenci ({p.students.length})</summary>
+              <ul role="list">{p.students.map(s => <li>{s}</li>)}</ul>
+            </details>
+          )}
+        </article>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<style>
+.page-header { padding-block: var(--space-12) var(--space-8); border-bottom: var(--border-width) solid var(--color-border); }
+.about-intro { margin-block-start: var(--space-4); font-size: var(--text-lg); font-weight: var(--font-light); max-inline-size: 70ch; }
+.section { padding-block: var(--space-12); }
+.section h2 { margin-block-end: var(--space-8); }
+.partners-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); gap: var(--space-6); }
+.partner-card { border: var(--border-width) solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-6); background-color: var(--color-surface); display: flex; flex-direction: column; gap: var(--space-4); }
+.partner-card__name { font-size: var(--text-md); font-weight: var(--font-bold); line-height: var(--leading-tight); }
+.partner-card__logo { display: block; max-block-size: 2.5rem; max-inline-size: 8rem; object-fit: contain; margin-block-end: var(--space-3); }
+.partner-card__location { font-size: var(--text-sm); max-inline-size: none; }
+.partner-card__link { font-size: var(--text-sm); color: var(--color-primary); text-decoration: none; }
+.partner-card__people { list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-1); font-size: var(--text-sm); }
+.partner-card__students { font-size: var(--text-sm); }
+.partner-card__students summary { cursor: pointer; font-weight: var(--font-medium); color: var(--color-primary); }
+.partner-card__students ul { list-style: none; padding-inline-start: var(--space-4); margin-block-start: var(--space-2); display: flex; flex-direction: column; gap: var(--space-1); color: var(--color-text-muted); }
+</style>

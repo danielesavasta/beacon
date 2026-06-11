@@ -1,0 +1,49 @@
+---
+import '../styles/components/hero.css';
+import { type Locale } from '../i18n/utils';
+
+export interface Props {
+  lang: Locale;
+  t: (key: string) => string;
+}
+
+const { lang, t } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const basePath = lang === 'en' ? base : `${base}${lang}/`;
+---
+
+<section class="hero" aria-labelledby="hero-title">
+  <video class="hero__video" autoplay muted loop playsinline aria-hidden="true">
+    <source src={`${base}mondello.mp4`} type="video/mp4" />
+  </video>
+  <div class="hero__overlay" aria-hidden="true"></div>
+
+  <img
+    src={`${base}beacon_logo.svg`}
+    alt=""
+    class="hero__logo"
+    aria-hidden="true"
+  />
+
+  <div class="hero__content container">
+    <h1 class="hero__title" id="hero-title">{t('hero.title')}</h1>
+    <p class="hero__subtitle">{t('hero.subtitle')}</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href={`${basePath}program/`}>{t('hero.cta')}</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const hero = document.querySelector('.hero');
+  const logo = hero?.querySelector('.hero__logo');
+
+  const toggleLogo = () => {
+    if (!hero || !logo) return;
+    const showLogo = window.scrollY > 40;
+    logo.classList.toggle('is-visible', showLogo);
+  };
+
+  toggleLogo();
+  window.addEventListener('scroll', toggleLogo, { passive: true });
+</script>

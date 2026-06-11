@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "label": "Navigazione principale",
+    "home": "Home",
+    "program": "Programma",
+    "lectures": "Lezioni",
+    "projects": "Progetti",
+    "about": "About",
+    "partners": "Partner",
+    "identity": "Identità",
+    "toggle": "Apri/chiudi menu"
+  },
+  "lang": {
+    "switch": "Cambia lingua",
+    "it": "Italiano",
+    "en": "English",
+    "pl": "Polski"
+  },
+  "hero": {
+    "title": "Beacon — Costruire un Alfabeto Visivo per i Valori Europei",
+    "subtitle": "BIP 2024-1-IT02-KA131-HED-000197121-2 · Un programma intensivo blended internazionale che esplora il linguaggio delle immagini come strumento di comunicazione universale.",
+    "cta": "Scopri il programma"
+  },
+  "home": {
+    "intro": "Un programma intensivo blended che esplora il linguaggio delle immagini come strumento di comunicazione universale.",
+    "keywords": "Parole chiave",
+    "partners_heading": "Università partner",
+    "program_heading": "Il programma",
+    "lectures_heading": "Lezioni",
+    "projects_heading": "Progetti"
+  },
+  "program": {
+    "title": "Programma",
+    "online": "Sessione online",
+    "inperson": "Sessione in presenza",
+    "timetable": "Calendario settimanale"
+  },
+  "lectures": {
+    "title": "Lezioni",
+    "online1": "Sessione online #1",
+    "online2": "Sessione online #2",
+    "online3": "Sessione online #3",
+    "watch": "Guarda la registrazione"
+  },
+  "projects": {
+    "title": "Progetti",
+    "placeholder": "I progetti degli studenti verranno pubblicati dopo la sessione in presenza."
+  },
+  "about": {
+    "title": "About",
+    "description": "Il BIP è un programma di cooperazione internazionale che coinvolge università da Italia, Turchia, Polonia, Argentina e Cile.",
+    "partners_title": "Partner",
+    "identity_title": "Identità visiva"
+  },
+  "footer": {
+    "credits": "BIP — Blended Intensive Programme",
+    "rights": "Tutti i diritti riservati"
+  },
+  "card": {
+    "readMore": "Leggi di più"
+  }
+}

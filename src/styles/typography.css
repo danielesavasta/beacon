@@ -1,0 +1,50 @@
+/* =============================================
+   TYPOGRAPHY
+   ============================================= */
+
+/* News Cycle is loaded via Google Fonts in Base.astro */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  color: var(--color-text);
+}
+
+h1 { font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl)); font-weight: var(--font-black); }
+h2 { font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl)); }
+h3 { font-size: clamp(var(--text-xl), 3vw, var(--text-3xl)); }
+h4 { font-size: var(--text-xl); }
+h5 { font-size: var(--text-lg); }
+h6 { font-size: var(--text-md); }
+
+p {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  max-inline-size: 70ch;
+}
+
+a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+strong { font-weight: var(--font-bold); }
+em     { font-style: italic; }
+
+small {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+blockquote {
+  border-inline-start: 0.25rem solid var(--color-primary);
+  padding-inline-start: var(--space-6);
+  font-style: italic;
+  color: var(--color-text-muted);
+}

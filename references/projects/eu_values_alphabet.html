@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>European Values Alphabet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    background: #fff;
+    color: #111;
+    min-height: 100vh;
+  }
+
+  header {
+    background: #fff;
+    color: #111;
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .eu-stars {
+    font-size: 13px;
+    letter-spacing: .35em;
+    opacity: .3;
+    margin-bottom: 1.25rem;
+    color: #111;
+  }
+
+  header h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(1.9rem, 5vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: #111;
+  }
+
+  header h1 em { font-style: italic; color: #888; }
+
+  header p.subtitle {
+    margin-top: .75rem;
+    font-size: .75rem;
+    font-weight: 300;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: #888;
+  }
+
+  .values-strip {
+    margin-top: 1.75rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .4rem .8rem;
+  }
+
+  .values-strip span {
+    font-size: .68rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #555;
+    padding: 3px 9px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+  }
+
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+
+  .script-section { margin-bottom: 2.75rem; }
+
+  .script-header {
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+    margin-bottom: 1.1rem;
+    padding-bottom: .65rem;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .script-pill {
+    font-size: .62rem;
+    font-weight: 500;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 2px;
+    background: #111;
+    color: #fff;
+  }
+
+  .script-header h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #666;
+    font-style: italic;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 9px;
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 13px 14px 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .card-letter {
+    font-family: 'EB Garamond', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1;
+    color: #111;
+  }
+
+  .card-word {
+    font-size: .8rem;
+    font-weight: 500;
+    color: #111;
+    line-height: 1.35;
+    word-break: break-word;
+    margin-top: 2px;
+  }
+
+  .card-lang {
+    font-size: .68rem;
+    color: #888;
+    margin-top: 1px;
+  }
+
+  .card-badge {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: .62rem;
+    font-weight: 500;
+    letter-spacing: .04em;
+    padding: 2px 6px;
+    border-radius: 2px;
+    background: #f2f2f2;
+    color: #444;
+    align-self: flex-start;
+  }
+
+  .footnote {
+    margin-top: 2rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid #ddd;
+    font-size: .7rem;
+    color: #888;
+    line-height: 1.85;
+    max-width: 780px;
+  }
+
+  .footnote strong { color: #555; font-weight: 500; }
+
+  footer {
+    text-align: center;
+    padding: 1.25rem 1rem 2rem;
+    font-size: .67rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #aaa;
+    border-top: 1px solid #eee;
+  }
+
+  @media (max-width: 600px) {
+    .cards { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+    header { padding: 2.25rem 1.25rem 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>The European Values Alphabet</h1>
+  <p class="subtitle">24 official EU languages · Latin · Cyrillic · Greek</p>
+  <div class="values-strip">
+    <span>Dignity</span>
+    <span>Liberty</span>
+    <span>Solidarity</span>
+    <span>Justice</span>
+    <span>Citizenship</span>
+    <span>Equality</span>
+  </div>
+</header>
+
+<main>
+
+  <section class="script-section">
+    <div class="script-header">
+      <span class="script-pill">Latin script</span>
+      <h2>A – Z · complete</h2>
+    </div>
+    <div class="cards" id="latin-cards"></div>
+  </section>
+
+  <section class="script-section">
+    <div class="script-header">
+      <span class="script-pill">Cyrillic script</span>
+      <h2>Bulgarian</h2>
+    </div>
+    <div class="cards" id="cyrillic-cards"></div>
+  </section>
+
+  <section class="script-section">
+    <div class="script-header">
+      <span class="script-pill">Greek script</span>
+      <h2>Greek</h2>
+    </div>
+    <div class="cards" id="greek-cards"></div>
+  </section>
+
+  <div class="footnote">
+    <strong>Notes —</strong>
+    Entries marked * indicate a language appearing more than once.
+    Letters A, H, N, Q, X, Z have no direct match among the six EU values in any of the 24 official EU languages;
+    the words shown for those letters are kindred concepts from the broader European values tradition,
+    chosen to complete the alphabet:
+    <strong>A</strong> Αξιοπρέπεια (Greek, Dignity — kept from previous version);
+    <strong>H</strong> Hodnota (Czech / Slovak, "Value");
+    <strong>N</strong> Naasteliefde (Dutch, "Love of one's neighbour");
+    <strong>Q</strong> Qualidade (Portuguese, "Quality");
+    <strong>X</strong> Xenofilia (Portuguese, "Love of the foreign / openness to others");
+    <strong>Z</strong> Zusammenhalt (German, "Cohesion / solidarity").
+    Within each script, cards are sorted alphabetically by their initial letter.
+    All 24 official languages of the European Union are represented at least once.
+  </div>
+
+</main>
+
+<footer>European Values Alphabet &nbsp;·&nbsp; 24 EU official languages &nbsp;·&nbsp; Three scripts</footer>
+
+<script>
+const latin = [
+  {l:"A", word:"Αξιοπρέπεια",          lang:"Greek (el)",          value:"Dignity"},
+  {l:"B", word:"Brīvība",              lang:"Latvian (lv)",        value:"Liberty"},
+  {l:"C", word:"Ciudadanía",           lang:"Spanish (es)",        value:"Citizenship"},
+  {l:"C", word:"Citoyenneté",          lang:"French (fr)",         value:"Citizenship"},
+  {l:"C", word:"Cittadinanza",         lang:"Italian (it)",        value:"Citizenship"},
+  {l:"D", word:"Dignité",              lang:"French (fr)*",        value:"Dignity"},
+  {l:"D", word:"Dinjità",              lang:"Maltese (mt)",        value:"Dignity"},
+  {l:"D", word:"Dínit",               lang:"Irish (ga)",          value:"Dignity"},
+  {l:"D", word:"Důstojnost",           lang:"Czech (cs)",          value:"Dignity"},
+  {l:"D", word:"Dôstojnosť",           lang:"Slovak (sk)",         value:"Dignity"},
+  {l:"E", word:"Enakost",              lang:"Slovenian (sl)",      value:"Equality"},
+  {l:"E", word:"Égalité",              lang:"French (fr)*",        value:"Equality"},
+  {l:"F", word:"Frihed",               lang:"Danish (da)",         value:"Liberty"},
+  {l:"G", word:"Gerechtigkeit",        lang:"German (de)",         value:"Justice"},
+  {l:"G", word:"Godność",              lang:"Polish (pl)",         value:"Dignity"},
+  {l:"H", word:"Hodnota",              lang:"Czech / Slovak",      value:"Value †"},
+  {l:"I", word:"Igazságosság",         lang:"Hungarian (hu)",      value:"Justice"},
+  {l:"I", word:"Ihmisarvo",            lang:"Finnish (fi)",        value:"Dignity"},
+  {l:"J", word:"Justiça",              lang:"Portuguese (pt)",     value:"Justice"},
+  {l:"J", word:"Justiție",             lang:"Romanian (ro)",       value:"Justice"},
+  {l:"K", word:"Kodakondsus",          lang:"Estonian (et)",       value:"Citizenship"},
+  {l:"L", word:"Laisvė",               lang:"Lithuanian (lt)",     value:"Liberty"},
+  {l:"L", word:"Liberté",              lang:"French (fr)*",        value:"Liberty"},
+  {l:"M", word:"Medborgarskap",        lang:"Swedish (sv)",        value:"Citizenship"},
+  {l:"N", word:"Naasteliefde",         lang:"Dutch (nl)",          value:"Neighbour-love †"},
+  {l:"O", word:"Orumas",               lang:"Lithuanian (lt)*",    value:"Dignity"},
+  {l:"P", word:"Pravda",               lang:"Croatian (hr)",       value:"Justice"},
+  {l:"Q", word:"Qualidade",            lang:"Portuguese (pt)*",    value:"Quality †"},
+  {l:"R", word:"Rechtvaardigheid",     lang:"Dutch (nl)*",         value:"Justice"},
+  {l:"S", word:"Saoirse",              lang:"Irish (ga)*",         value:"Liberty"},
+  {l:"S", word:"Solidaarsus",          lang:"Estonian (et)*",      value:"Solidarity"},
+  {l:"S", word:"Solidariedade",        lang:"Portuguese (pt)*",    value:"Solidarity"},
+  {l:"S", word:"Solidarita",           lang:"Czech (cs)*",         value:"Solidarity"},
+  {l:"S", word:"Solidarita",           lang:"Slovak (sk)*",        value:"Solidarity"},
+  {l:"S", word:"Solidarnost",          lang:"Croatian (hr)*",      value:"Solidarity"},
+  {l:"S", word:"Solidarnost",          lang:"Slovenian (sl)*",     value:"Solidarity"},
+  {l:"S", word:"Solidarność",          lang:"Polish (pl)*",        value:"Solidarity"},
+  {l:"S", word:"Solidaritet",          lang:"Danish (da)*",        value:"Solidarity"},
+  {l:"S", word:"Solidaritet",          lang:"Swedish (sv)*",       value:"Solidarity"},
+  {l:"S", word:"Solidarität",          lang:"German (de)*",        value:"Solidarity"},
+  {l:"S", word:"Solidarité",           lang:"French (fr)*",        value:"Solidarity"},
+  {l:"S", word:"Solidarietà",          lang:"Italian (it)*",       value:"Solidarity"},
+  {l:"S", word:"Solidarumas",          lang:"Lithuanian (lt)*",    value:"Solidarity"},
+  {l:"T", word:"Taisnīgums",           lang:"Latvian (lv)*",       value:"Justice"},
+  {l:"U", word:"Uniós polgárság",      lang:"Hungarian (hu)*",     value:"Citizenship"},
+  {l:"V", word:"Võrdõiguslikkus",      lang:"Estonian (et)*",      value:"Equality"},
+  {l:"V", word:"Värdighet",            lang:"Swedish (sv)*",       value:"Dignity"},
+  {l:"W", word:"Waardigheid",          lang:"Dutch (nl)*",         value:"Dignity"},
+  {l:"W", word:"Wolność",              lang:"Polish (pl)*",        value:"Liberty"},
+  {l:"X", word:"Xenofilia",            lang:"Portuguese (pt)*",    value:"Openness †"},
+  {l:"Y", word:"Yhteisvastuullisuus",  lang:"Finnish (fi)*",       value:"Solidarity"},
+  {l:"Z", word:"Zusammenhalt",         lang:"German (de)*",        value:"Cohesion †"},
+];
+
+const cyrillic = [
+  {l:"Г", word:"Гражданство",   lang:"Bulgarian (bg)",   value:"Citizenship"},
+  {l:"Д", word:"Достойнство",   lang:"Bulgarian (bg)*",  value:"Dignity"},
+  {l:"Р", word:"Равенство",     lang:"Bulgarian (bg)*",  value:"Equality"},
+  {l:"С", word:"Свобода",       lang:"Bulgarian (bg)*",  value:"Liberty"},
+  {l:"С", word:"Солидарност",   lang:"Bulgarian (bg)*",  value:"Solidarity"},
+  {l:"С", word:"Справедливост", lang:"Bulgarian (bg)*",  value:"Justice"},
+];
+
+const greek = [
+  {l:"Α", word:"Αλληλεγγύη",  lang:"Greek (el)",   value:"Solidarity"},
+  {l:"Α", word:"Αξιοπρέπεια", lang:"Greek (el)*",  value:"Dignity"},
+  {l:"Δ", word:"Δικαιοσύνη",  lang:"Greek (el)*",  value:"Justice"},
+  {l:"Ε", word:"Ελευθερία",   lang:"Greek (el)*",  value:"Liberty"},
+  {l:"Η", word:"Ηθαγένεια",   lang:"Greek (el)*",  value:"Citizenship"},
+  {l:"Ι", word:"Ισότητα",     lang:"Greek (el)*",  value:"Equality"},
+];
+
+function buildCards(containerId, items) {
+  const container = document.getElementById(containerId);
+  const sorted = [...items].sort((a, b) => a.l.localeCompare(b.l, 'en'));
+  sorted.forEach(e => {
+    const div = document.createElement('div');
+    div.className = 'card';
+    div.innerHTML =
+      '<div class="card-letter">' + e.l + '</div>' +
+      '<div class="card-word">' + e.word + '</div>' +
+      '<div class="card-lang">' + e.lang + '</div>' +
+      '<span class="card-badge">' + e.value + '</span>';
+    container.appendChild(div);
+  });
+}
+
+buildCards('latin-cards',    latin);
+buildCards('cyrillic-cards', cyrillic);
+buildCards('greek-cards',    greek);
+</script>
+</body>
+</html>

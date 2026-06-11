@@ -1,0 +1,77 @@
+---
+import LangSwitcher from './LangSwitcher.astro';
+import { type Locale } from '../i18n/utils';
+import '../styles/components/header.css';
+
+export interface Props {
+  lang: Locale;
+  t: (key: string) => string;
+  hideLogo?: boolean;
+}
+
+const { lang, t, hideLogo = false } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const basePath = lang === 'en' ? base : `${base}${lang}/`;
+---
+
+<header class="site-header">
+  <div class="site-header__inner container">
+    {!hideLogo && (
+      <a class="site-header__logo" href={basePath} aria-label="Beacon Home">
+        <img src={`${base}beacon_logo.svg`} alt="Beacon — Building a Visual Alphabet for the European Values" class="site-header__logo-img" />
+      </a>
+    )}
+
+    <nav class="site-nav" aria-label={t('nav.label')}>
+      <ul class="site-nav__list" role="list" id="mobile-menu">
+        <li><a class="site-nav__link" href={basePath}>{t('nav.home')}</a></li>
+        <li><a class="site-nav__link" href={`${basePath}program/`}>{t('nav.program')}</a></li>
+        <li><a class="site-nav__link" href={`${basePath}lectures/`}>{t('nav.lectures')}</a></li>
+        <li><a class="site-nav__link" href={`${basePath}projects/`}>{t('nav.projects')}</a></li>
+        <li>
+          <a class="site-nav__link" href={`${basePath}about/`}>{t('nav.about')}</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="site-header__actions">
+      <LangSwitcher currentLang={lang} currentPath={Astro.url.pathname} t={t} />
+      <button
+        class="site-nav__toggle"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label={t('nav.toggle')}
+      >
+        <span class="site-nav__bar" aria-hidden="true"></span>
+        <span class="site-nav__bar" aria-hidden="true"></span>
+        <span class="site-nav__bar" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector('.site-nav__toggle') as HTMLButtonElement | null;
+  const menu   = document.querySelector('#mobile-menu') as HTMLElement | null;
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = menu?.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (!toggle?.contains(e.target as Node) && !menu?.contains(e.target as Node)) {
+      menu?.classList.remove('is-open');
+      toggle?.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      menu?.classList.remove('is-open');
+      toggle?.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>

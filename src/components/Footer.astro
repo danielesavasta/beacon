@@ -1,0 +1,19 @@
+---
+import { type Locale } from '../i18n/utils';
+import '../styles/components/footer.css';
+
+export interface Props {
+  lang: Locale;
+  t: (key: string) => string;
+}
+
+const { t } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="site-footer__inner container">
+    <p class="site-footer__credits">{t('footer.credits')}</p>
+    <p class="site-footer__rights">© {year} {t('footer.rights')}</p>
+  </div>
+</footer>

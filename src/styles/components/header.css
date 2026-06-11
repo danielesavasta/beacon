@@ -1,0 +1,119 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-raised);
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding-block: var(--space-4);
+}
+
+.site-header__logo {
+  text-decoration: none;
+  flex-shrink: 0;
+  position: fixed;
+  top: 4em;
+  left: 2vw;
+}
+
+.site-header__logo-img {
+  display: block;
+  block-size: 25rem;
+  inline-size: auto;
+}
+
+.site-nav {
+  flex: 1;
+}
+
+.site-nav__list {
+  display: flex;
+  gap: var(--space-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-nav__link {
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+  padding-block: var(--space-1);
+}
+
+.site-nav__link:hover {
+  color: var(--color-primary);
+}
+
+.site-nav__link:focus-visible {
+  outline: 0.125rem solid var(--color-focus);
+  outline-offset: 0.25rem;
+  border-radius: var(--radius-sm);
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-inline-start: auto;
+}
+
+/* Mobile toggle button */
+.site-nav__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  inline-size: 1.5rem;
+  block-size: 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.site-nav__bar {
+  display: block;
+  inline-size: 100%;
+  block-size: 0.125rem;
+  background-color: var(--color-text);
+  border-radius: var(--radius-full);
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+/* Mobile breakpoint */
+@media (max-width: 48rem) {
+  .site-nav__toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline: 0;
+    background-color: var(--color-surface);
+    border-bottom: var(--border-width) solid var(--color-border);
+    z-index: var(--z-raised);
+  }
+
+  .site-nav__list {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    padding: var(--space-4);
+  }
+
+  .site-nav__list.is-open {
+    display: flex;
+  }
+
+  .site-nav__link {
+    padding-block: var(--space-3);
+    display: block;
+  }
+}

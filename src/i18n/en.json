@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "label": "Main navigation",
+    "home": "Home",
+    "program": "Program",
+    "lectures": "Lectures",
+    "projects": "Projects",
+    "about": "About",
+    "partners": "Partners",
+    "identity": "Identity",
+    "toggle": "Open/close menu"
+  },
+  "lang": {
+    "switch": "Change language",
+    "it": "Italiano",
+    "en": "English",
+    "pl": "Polski"
+  },
+  "hero": {
+    "title": "Beacon — Building a Visual Alphabet for the European Values",
+    "subtitle": "BIP 2024-1-IT02-KA131-HED-000197121-2 · An international blended intensive programme exploring picture language as a universal communication tool.",
+    "cta": "Explore the programme"
+  },
+  "home": {
+    "intro": "A blended intensive programme exploring picture language as a universal communication tool.",
+    "keywords": "Keywords",
+    "partners_heading": "Partner universities",
+    "program_heading": "The programme",
+    "lectures_heading": "Lectures",
+    "projects_heading": "Projects"
+  },
+  "program": {
+    "title": "Program",
+    "online": "Online session",
+    "inperson": "In-person session",
+    "timetable": "Weekly timetable"
+  },
+  "lectures": {
+    "title": "Lectures",
+    "online1": "Online session #1",
+    "online2": "Online session #2",
+    "online3": "Online session #3",
+    "watch": "Watch the recording"
+  },
+  "projects": {
+    "title": "Projects",
+    "placeholder": "Student projects will be published after the in-person session."
+  },
+  "about": {
+    "title": "About",
+    "description": "BIP is an international cooperation programme involving universities from Italy, Turkey, Poland, Argentina and Chile.",
+    "partners_title": "Partners",
+    "identity_title": "Visual identity"
+  },
+  "footer": {
+    "credits": "BIP — Blended Intensive Programme",
+    "rights": "All rights reserved"
+  },
+  "card": {
+    "readMore": "Read more"
+  }
+}
