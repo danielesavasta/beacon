@@ -26,8 +26,8 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    color-mix(in srgb, var(--color-black) 32%, transparent),
-    color-mix(in srgb, var(--color-primary) 42%, transparent)
+    color-mix(in srgb, var(--color-primary-dark) 80%, transparent),
+    color-mix(in srgb, var(--color-secondary-dark) 60%, transparent)
   );
   z-index: 1;
 }
@@ -64,7 +64,7 @@
   font-weight: var(--font-black);
   line-height: var(--leading-tight);
   color: var(--color-white);
-  max-inline-size: 20ch;
+  text-wrap: balance;
 }
 
 .hero__subtitle {
