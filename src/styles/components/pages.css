@@ -213,10 +213,11 @@
 }
 
 .journal-day {
-  border: var(--border-width) solid var(--color-border);
+  border: var(--border-width) solid var(--color-header-border);
   border-radius: var(--radius-md);
   padding: var(--space-6);
-  background-color: var(--color-surface);
+  background-color: var(--color-bg);
+  width: 80rem;
 }
 
 .journal-day h2 {
@@ -238,7 +239,7 @@
   margin: 0;
   border-radius: var(--radius-sm);
   overflow: clip;
-  border: var(--border-width) solid var(--color-border);
+  border: var(--border-width) solid var(--color-header-border);
   aspect-ratio: 4 / 3;
 }
 
@@ -257,4 +258,26 @@
   border: 0.125rem dashed var(--color-border);
   border-radius: var(--radius-md);
   text-align: center;
+}
+
+
+.journal-day__gallery {
+display: grid;
+  grid: 60vw/auto-flow 70vw;
+  
+  gap: 2ch;
+  padding-inline: var(--bleed);
+  scroll-padding-inline: var(--bleed);
+  max-inline-size: 100%;
+  overflow-x: auto;
+  -ms-scroll-chaining: none;
+  overscroll-behavior: contain;
+  -ms-scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
+  }
+
+@media screen and (min-width: 600px) {
+  .journal-day__gallery {
+  grid: 28vw/auto-flow 35vw;
+  }
 }
