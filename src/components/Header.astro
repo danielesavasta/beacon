@@ -49,7 +49,15 @@ const basePath = lang === 'en' ? base : `${base}${lang}/`;
         aria-pressed="false"
         aria-label={t('nav.theme')}
       >
-        <img class="theme-toggle__icon" src={`${base}darkmode.svg`} alt="" aria-hidden="true" />
+        <svg
+          class="theme-toggle__icon"
+          viewBox="0 0 239.71 239.71"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path d="M119.85,239.71C53.77,239.71,0,185.94,0,119.85S53.77,0,119.85,0s119.85,53.77,119.85,119.85-53.77,119.85-119.85,119.85ZM119.85,21c-54.51,0-98.85,44.35-98.85,98.85s44.35,98.85,98.85,98.85,98.85-44.35,98.85-98.85S174.36,21,119.85,21Z" />
+          <path d="M119.85,201.12c44.88,0,81.27-36.39,81.27-81.27s-36.39-81.27-81.27-81.27v162.54Z" />
+        </svg>
       </button>
 
     </div>

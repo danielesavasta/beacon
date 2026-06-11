@@ -52,11 +52,11 @@ const basePath = lang === 'en' ? base : `${base}${lang}/`;
   <body>
     <a class="skip-link" href="#main-content">{lang === 'it' ? 'Vai al contenuto' : lang === 'en' ? 'Skip to content' : 'Przejdź do treści'}</a>
     <Header lang={lang} t={t} hideLogo={hideHeaderLogo} />
-    <main id="main-content">
+    <main id="main-content" class="main">
           {!hideHeaderLogo && (
-      <span class="site-header__logo" aria-label="Beacon Home">
+      <!-- <span class="site-header__logo" aria-label="Beacon Home">
         <img src={`${base}beacon_logo.svg`} alt="Beacon — Building a Visual Alphabet for the European Values" class="site-header__logo-img" />
-      </span>
+      </span>-->
     )}
       <slot />
     </main>

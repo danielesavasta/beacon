@@ -40,17 +40,19 @@
   --font-bold:      700;
   --font-black:     900;
 
-  /* Modular scale (base 1rem = 16px) */
-  --text-xs:   0.75rem;   /* 12px */
-  --text-sm:   0.875rem;  /* 14px */
-  --text-base: 1rem;      /* 16px */
-  --text-md:   1.125rem;  /* 18px */
-  --text-lg:   1.25rem;   /* 20px */
-  --text-xl:   1.5rem;    /* 24px */
-  --text-2xl:  1.875rem;  /* 30px */
-  --text-3xl:  2.25rem;   /* 36px */
-  --text-4xl:  3rem;      /* 48px */
-  --text-5xl:  4rem;      /* 64px */
+   /* Modular scale (base and ratio) */
+   --text-base: 1.15rem;
+   --ratio: 1.333;
+
+   --text-xs:   calc(var(--text-base) / (var(--ratio) * var(--ratio)));
+   --text-sm:   calc(var(--text-base) / var(--ratio));
+   --text-md:   calc(var(--text-base) * var(--ratio));
+   --text-lg:   calc(var(--text-md) * var(--ratio));
+   --text-xl:   calc(var(--text-lg) * var(--ratio));
+   --text-2xl:  calc(var(--text-xl) * var(--ratio));
+   --text-3xl:  calc(var(--text-2xl) * var(--ratio));
+   --text-4xl:  calc(var(--text-3xl) * var(--ratio));
+   --text-5xl:  calc(var(--text-4xl) * var(--ratio));
 
   --leading-tight:  1.2;
   --leading-normal: 1.5;

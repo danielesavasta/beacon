@@ -7,9 +7,17 @@
   margin-inline: auto;
 }
 
-.container--sm { inline-size: min(100% - var(--space-8), var(--container-sm)); }
-.container--md { inline-size: min(100% - var(--space-8), var(--container-md)); }
-.container--lg { inline-size: min(100% - var(--space-8), var(--container-lg)); }
+.container--sm {
+  inline-size: min(100% - var(--space-8), var(--container-sm));
+}
+
+.container--md {
+  inline-size: min(100% - var(--space-8), var(--container-md));
+}
+
+.container--lg {
+  inline-size: min(100% - var(--space-8), var(--container-lg));
+}
 
 /* Skip link */
 .skip-link {
@@ -87,20 +95,28 @@
 }
 
 /* Text helpers */
-.text-muted   { color: var(--color-text-muted); }
-.text-primary { color: var(--color-primary); }
-.text-sm      { font-size: var(--text-sm); }
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-sm {
+  font-size: var(--text-sm);
+}
 
 /* Markdown content */
 .prose {
   max-inline-size: 70ch;
 }
 
-.prose > :first-child {
+.prose> :first-child {
   margin-block-start: 0;
 }
 
-.prose > :last-child {
+.prose> :last-child {
   margin-block-end: 0;
 }
 
@@ -126,14 +142,13 @@
 .prose table {
   inline-size: 100%;
   border-collapse: collapse;
-  font-size: var(--text-sm);
 }
 
 .prose th,
 .prose td {
   text-align: start;
   padding: var(--space-3) var(--space-4);
-  border-bottom: var(--border-width) solid var(--color-border);
+  border-bottom: var(--border-width) solid var(--color-header-border);
   vertical-align: top;
 }
 
@@ -144,4 +159,11 @@
   font-size: var(--text-xs);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+.main {
+  background: url('../beacon_logo.svg') no-repeat left 5rem;
+  background-size: 50rem;
+  background-attachment: fixed;
+  min-height: 90dvh;
 }
