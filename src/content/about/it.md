@@ -74,13 +74,13 @@ partners:
     location: "Buenos Aires, Argentina"
     url: "https://www.fadu.uba.ar/"
     logo: "logoFADU.png"
-    url: "https://www.uc.cl/en/academic-units/school-of-design/"
     people:
       - "Alejandra Carbone"
     students: []
   - name: "UC Chile School of Design"
     location: "Cile"
     logo: "logoChile.png"
+    url: "https://www.uc.cl/en/academic-units/school-of-design/"
     people:
       - "Javier Carrasco"
       - "Rodrigo Ramírez"
