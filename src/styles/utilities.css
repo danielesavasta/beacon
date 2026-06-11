@@ -132,6 +132,9 @@
   margin-block: var(--space-4);
 }
 
+h3{
+  margin-bottom:var(--space-6);
+}
 .prose h2,
 .prose h3,
 .prose h4 {

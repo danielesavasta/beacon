@@ -2,7 +2,6 @@
 
 .page-header {
   padding-block: var(--space-12) var(--space-8);
-  border-bottom: var(--border-width) solid var(--color-border);
 }
 
 .section {
@@ -18,7 +17,7 @@
 
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+  grid-template-columns: repeat(auto-fit,minmax(12rem,1fr));
   gap: var(--space-6);
 }
 
@@ -40,8 +39,6 @@
 
 .partner-card__logo {
   display: block;
-  max-block-size: 2.5rem;
-  max-inline-size: 8rem;
   object-fit: contain;
   margin-block-end: var(--space-3);
 }
@@ -109,8 +106,6 @@
 
 .partner-logo-item img {
   display: block;
-  max-block-size: 3.5rem;
-  max-inline-size: 9rem;
   inline-size: auto;
   object-fit: contain;
   filter: grayscale(100%);
