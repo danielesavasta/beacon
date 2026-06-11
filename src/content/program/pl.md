@@ -5,7 +5,7 @@ description: "Pełny harmonogram faz online i stacjonarnej Beacon BIP."
 
 ## Faza online
 
-### Poniedziałek 11 maja
+#### Poniedziałek 11 maja
 
 | Godzina | Aktywność |
 |---------|-----------|
@@ -17,7 +17,7 @@ description: "Pełny harmonogram faz online i stacjonarnej Beacon BIP."
 | 17:30   | *Otto Neurath jako "Ambasador Szczęścia"* — Martin Foessleitner |
 | 18:00   | Check-out |
 
-### Środa 12 maja
+#### Środa 13 maja
 
 | Godzina | Aktywność |
 |---------|-----------|
@@ -29,7 +29,7 @@ description: "Pełny harmonogram faz online i stacjonarnej Beacon BIP."
 | 17:30   | Równoległe sesje projektowe |
 | 18:00   | Check-out |
 
-### Piątek 13 maja
+#### Piątek 15 maja
 
 | Godzina | Aktywność |
 |---------|-----------|
@@ -40,8 +40,6 @@ description: "Pełny harmonogram faz online i stacjonarnej Beacon BIP."
 | 17:00   | *Wizualne narzędzia aktywacji sytuacji kryzysowych* — Rodrigo Ramírez |
 | 17:30   | Inauguracja fazy stacjonarnej |
 | 18:00   | Check-out |
-
----
 
 ## Faza stacjonarna
 

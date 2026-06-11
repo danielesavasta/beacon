@@ -4,8 +4,9 @@ description: "Full schedule of the online and in-person phases of the Beacon BIP
 ---
 
 ## Online phase
+**Monday 11th – Friday 15th May**
 
-### Monday 11th May
+#### Monday 11th May
 
 | Time  | Activity |
 |-------|----------|
@@ -17,7 +18,7 @@ description: "Full schedule of the online and in-person phases of the Beacon BIP
 | 17:30 | *Otto Neurath as "Ambassador of Happiness"* — Martin Foessleitner |
 | 18:00 | Check-out |
 
-### Wednesday 12th May
+#### Wednesday 13th May
 
 | Time  | Activity |
 |-------|----------|
@@ -29,7 +30,7 @@ description: "Full schedule of the online and in-person phases of the Beacon BIP
 | 17:30 | Parallel design sessions |
 | 18:00 | Check-out |
 
-### Friday 13th May
+#### Friday 15th May
 
 | Time  | Activity |
 |-------|----------|
@@ -40,8 +41,6 @@ description: "Full schedule of the online and in-person phases of the Beacon BIP
 | 17:00 | *Visual Tools for Activating Emergencies* — Rodrigo Ramírez |
 | 17:30 | In-person phase kick-off |
 | 18:00 | Check-out |
-
----
 
 ## In-person phase
 

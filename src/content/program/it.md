@@ -4,9 +4,10 @@ description: "Calendario completo delle fasi online e in presenza del Beacon BIP
 ---
 
 ## Fase online
+**Lunedì 11 – Venerdì 15 Maggio**
 
-### Lunedì 11 maggio
-
+#### Lunedì 11 maggio
+ 
 | Orario | Attività |
 |--------|----------|
 | 15:00  | Avvio fase online: check-in e attività di ice-breaking |
@@ -17,7 +18,7 @@ description: "Calendario completo delle fasi online e in presenza del Beacon BIP
 | 17:30  | *Otto Neurath come "Ambasciatore della Felicità"* — Martin Foessleitner |
 | 18:00  | Check-out |
 
-### Mercoledì 12 maggio
+#### Mercoledì 13 maggio
 
 | Orario | Attività |
 |--------|----------|
@@ -29,7 +30,7 @@ description: "Calendario completo delle fasi online e in presenza del Beacon BIP
 | 17:30  | Sessioni parallele di design |
 | 18:00  | Check-out |
 
-### Venerdì 13 maggio
+#### Venerdì 15 maggio
 
 | Orario | Attività |
 |--------|----------|
@@ -40,8 +41,6 @@ description: "Calendario completo delle fasi online e in presenza del Beacon BIP
 | 17:00  | *Strumenti visivi per attivare le emergenze* — Rodrigo Ramírez |
 | 17:30  | Avvio fase in presenza |
 | 18:00  | Check-out |
-
----
 
 ## Fase in presenza
 
