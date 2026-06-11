@@ -12,6 +12,7 @@
   align-items: center;
   gap: var(--space-8);
   padding-block: var(--space-4);
+  justify-content: space-between;
 }
 
 .site-header__logo {
@@ -68,15 +69,14 @@
 }
 
 .theme-toggle {
-  min-inline-size: 5.5rem;
-  padding: var(--space-2) var(--space-3);
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  display: inline-grid;
+  place-items: center;
+  padding: 0;
   border: var(--border-width) solid var(--color-header-border);
   border-radius: var(--radius-full);
   background-color: color-mix(in srgb, var(--color-header-bg) 85%, var(--color-white));
-  color: var(--color-header-text);
-  font-size: var(--text-sm);
-  font-weight: var(--font-bold);
-  line-height: 1;
   cursor: pointer;
   transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
 }
@@ -88,6 +88,12 @@
 .theme-toggle:focus-visible {
   outline: 0.125rem solid var(--color-focus);
   outline-offset: 0.25rem;
+}
+
+.theme-toggle__icon {
+  display: block;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
 }
 
 /* Mobile toggle button */

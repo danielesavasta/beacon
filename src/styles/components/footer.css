@@ -24,3 +24,10 @@
   opacity: 0.8;
   max-inline-size: none;
 }
+
+.site-footer__disclaimer{
+  font-size: var(--text-sm);
+  opacity: 0.8;
+  max-inline-size: none;
+  margin-bottom: var(--space-6);
+}

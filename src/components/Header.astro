@@ -16,6 +16,17 @@ const basePath = lang === 'en' ? base : `${base}${lang}/`;
 
 <header class="site-header">
   <div class="site-header__inner container">
+      <button
+        class="site-nav__toggle"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label={t('nav.toggle')}
+      >
+        <span class="site-nav__bar" aria-hidden="true"></span>
+        <span class="site-nav__bar" aria-hidden="true"></span>
+        <span class="site-nav__bar" aria-hidden="true"></span>
+      </button>
+      
     {!hideLogo && (
       <a class="site-header__logo" href={basePath} aria-label="Beacon Home">
         <img src={`${base}beacon_logo.svg`} alt="Beacon — Building a Visual Alphabet for the European Values" class="site-header__logo-img" />
@@ -35,27 +46,16 @@ const basePath = lang === 'en' ? base : `${base}${lang}/`;
     </nav>
 
     <div class="site-header__actions">
+      <LangSwitcher currentLang={lang} currentPath={Astro.url.pathname} t={t} />
       <button
         class="theme-toggle"
         type="button"
         aria-pressed="false"
         aria-label={t('nav.theme')}
-        data-text-dark={t('nav.themeDark')}
-        data-text-light={t('nav.themeLight')}
       >
-        <span class="theme-toggle__text">{t('nav.themeDark')}</span>
+        <img class="theme-toggle__icon" src={`${base}darkmode.svg`} alt="" aria-hidden="true" />
       </button>
-      <LangSwitcher currentLang={lang} currentPath={Astro.url.pathname} t={t} />
-      <button
-        class="site-nav__toggle"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-        aria-label={t('nav.toggle')}
-      >
-        <span class="site-nav__bar" aria-hidden="true"></span>
-        <span class="site-nav__bar" aria-hidden="true"></span>
-        <span class="site-nav__bar" aria-hidden="true"></span>
-      </button>
+
     </div>
   </div>
 </header>
@@ -81,17 +81,9 @@ const basePath = lang === 'en' ? base : `${base}${lang}/`;
 
     const activeTheme = getActiveTheme();
     const isDark = activeTheme === 'dark';
-    const nextThemeLabel = isDark
-      ? (themeToggle.dataset.textLight ?? 'Light')
-      : (themeToggle.dataset.textDark ?? 'Dark');
 
     themeToggle.setAttribute('aria-pressed', String(isDark));
     themeToggle.dataset.theme = activeTheme;
-
-    const textElement = themeToggle.querySelector('.theme-toggle__text');
-    if (textElement) {
-      textElement.textContent = nextThemeLabel;
-    }
   };
 
   const setTheme = (theme: 'light' | 'dark') => {

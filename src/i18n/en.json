@@ -21,8 +21,9 @@
   },
   "hero": {
     "title": "Beacon — Building a Visual Alphabet for the European Values",
-    "subtitle": "BIP 2024-1-IT02-KA131-HED-000197121-2 · An international blended intensive programme exploring picture language as a universal communication tool.",
-    "cta": "Explore the programme"
+    "subtitle": "May-June 2026 · Blended Intensive Program",
+    "cta": "Explore the programme",
+    "sub2": "BIP 2024-1-IT02-KA131-HED-000197121-2 · An international blended intensive programme exploring picture language as a universal communication tool."
   },
   "home": {
     "intro": "A blended intensive programme exploring picture language as a universal communication tool.",
@@ -57,7 +58,8 @@
   },
   "footer": {
     "credits": "BIP — Blended Intensive Programme",
-    "rights": "All rights reserved"
+    "rights": "All rights reserved",
+    "disclaimer": "Beacon is a Blended Intensive Programme (BIP) bringing together design students and academics from nine partner universities across Europe and Latin America. Over an online phase and an in-person week in Palermo, participants explore picture language as a shared visual communication tool. The project code is **BIP 2024-1-IT02-KA131-HED-000197121-2**, funded by the Erasmus+ programme."
   },
   "card": {
     "readMore": "Read more"
