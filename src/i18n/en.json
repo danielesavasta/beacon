@@ -59,7 +59,8 @@
   },
   "projects": {
     "title": "Projects",
-    "placeholder": "Student projects will be published after the in-person session."
+    "placeholder": "Student projects will be published after the in-person session.",
+    "watch": "Explore"
   },
   "about": {
     "title": "About",
@@ -86,5 +87,9 @@
   },
   "card": {
     "readMore": "Read more"
+  },
+  "project": {
+    "authors": "Authors",
+    "back": "Back to Projects"
   }
 }

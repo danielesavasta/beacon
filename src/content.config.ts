@@ -54,6 +54,15 @@ export const collections = {
     loader: glob({ pattern: '**/*.md', base: './src/content/projects' }),
     schema: z.object({ ...pageBase }),
   }),
+  projectItems: defineCollection({
+    loader: glob({ pattern: '**/*.md', base: './src/content/project-items' }),
+    schema: z.object({
+      title: z.string(),
+      authors: z.array(z.string()),
+      description: z.string(),
+      images: z.array(z.string()).default([]),
+    }),
+  }),
   about: defineCollection({
     loader: glob({ pattern: '**/*.md', base: './src/content/about' }),
     schema: z.object({

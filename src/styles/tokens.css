@@ -83,10 +83,10 @@
   /* =============================================
      BORDERS & RADII
      ============================================= */
-  --radius-sm:   0.25rem;
-  --radius-md:   0.5rem;
-  --radius-lg:   1rem;
-  --radius-full: 9999px;
+  --radius-sm:   0; /*0.25rem*/
+  --radius-md:   0; /*0.5rem*/
+  --radius-lg:   0; /*1rem*/
+  --radius-full: 9999px; /*0.25rem*/
 
   --border-width: 0.0625rem;  /* 1px */
 

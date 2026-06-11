@@ -1,0 +1,18 @@
+---
+import Page from '../../projects/[slug].astro';
+import { defaultLocale, locales } from '../../../i18n/utils';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projectItems');
+  return locales
+    .filter((lang) => lang !== defaultLocale)
+    .flatMap((lang) =>
+      projects.map((project) => ({
+        params: { lang, slug: project.id },
+      }))
+    );
+}
+---
+
+<Page lang={Astro.params.lang} slug={Astro.params.slug} />

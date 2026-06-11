@@ -1,0 +1,62 @@
+---
+import Base from '../../layouts/Base.astro';
+import '../../styles/components/project-single.css';
+import { getLangFromUrl, type Locale, useTranslations } from '../../i18n/utils';
+import { getCollection, getEntry } from 'astro:content';
+
+export interface Props {
+  lang?: Locale;
+  slug?: string;
+}
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projectItems');
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { lang: 'en' as Locale },
+  }));
+}
+
+const lang = (Astro.props.lang ?? getLangFromUrl(Astro.url)) as Locale;
+const slug = Astro.props.slug ?? Astro.params.slug;
+const t = useTranslations(lang);
+const base = import.meta.env.BASE_URL;
+const basePath = lang === 'en' ? base : `${base}${lang}/`;
+
+const entry = await getEntry('projectItems', slug!);
+if (!entry) {
+  throw new Error(`Missing project content for slug: ${slug}`);
+}
+
+const { title, authors, description, images } = entry.data;
+---
+
+<Base title={title} lang={lang} t={t}>
+  <div class="page-header container">
+    <h1 class="sr-only">{title}</h1>
+  </div>
+  <section class="section container">
+    <div class="project-layout">
+      <div class="project-meta">
+        <h2 class="project-meta__title">{title}</h2>
+        <p class="project-meta__label">{t('project.authors')}</p>
+        <ul class="project-meta__authors" role="list">
+          {authors.map((author) => <li>{author}</li>)}
+        </ul>
+        <p class="project-meta__description">{description}</p>
+        <a class="project-meta__back" href={`${basePath}projects/`}>
+          ← {t('project.back')}
+        </a>
+      </div>
+      <div class="project-images">
+        {images.map((src, i) => (
+          <img
+            src={src}
+            alt={`${title} — ${t('project.authors')} ${authors.join(', ')} — image ${i + 1}`}
+            loading={i === 0 ? 'eager' : 'lazy'}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

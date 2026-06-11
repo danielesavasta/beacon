@@ -58,7 +58,8 @@
   },
   "projects": {
     "title": "Progetti",
-    "placeholder": "I progetti degli studenti verranno pubblicati dopo la sessione in presenza."
+    "placeholder": "I progetti degli studenti verranno pubblicati dopo la sessione in presenza.",
+    "watch": "Esplora"
   },
   "about": {
     "title": "About",
@@ -84,5 +85,9 @@
   },
   "card": {
     "readMore": "Leggi di più"
+  },
+  "project": {
+    "authors": "Autori",
+    "back": "Torna ai Progetti"
   }
 }

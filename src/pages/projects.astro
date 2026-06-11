@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import '../styles/components/card.css';
 import { getLangFromUrl, type Locale, useTranslations } from '../i18n/utils';
-import { getEntry, render } from 'astro:content';
+import { getCollection, getEntry, render } from 'astro:content';
 
 export interface Props {
   lang?: Locale;
@@ -17,6 +17,7 @@ if (!entry) {
   throw new Error(`Missing projects content for locale: ${lang}`);
 }
 const { Content } = await render(entry);
+const projectItems = await getCollection('projectItems');
 ---
 
 <Base title={t('projects.title')} lang={lang} t={t}>
@@ -37,4 +38,21 @@ const { Content } = await render(entry);
   <section class="section container prose">
     <Content />
   </section>
+  {projectItems.length > 0 && (
+    <section class="section container">
+      <div class="card-grid">
+        {projectItems.map((project) => (
+          <article class="card">
+            <div class="card__body">
+              <h2 class="card__title">{project.data.title}</h2>
+              <p class="card__text">{project.data.authors.join(', ')}</p>
+              <a class="btn btn--secondary" href={`${basePath}projects/${project.id}/`}>
+                {t('card.readMore')}
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  )}
 </Base>

@@ -93,7 +93,7 @@
 }
 
 .theme-toggle__icon path {
-  fill: var(--color-text-muted);
+  fill: var(--color-text);
 }
 
 /* Mobile toggle button */

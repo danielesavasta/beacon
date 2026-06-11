@@ -58,7 +58,8 @@
   },
   "projects": {
     "title": "Projekty",
-    "placeholder": "Projekty studentów zostaną opublikowane po sesji stacjonarnej."
+    "placeholder": "Projekty studentów zostaną opublikowane po sesji stacjonarnej.",
+    "watch": "Eksploruj"
   },
   "about": {
     "title": "O projekcie",
@@ -84,5 +85,9 @@
   },
   "card": {
     "readMore": "Czytaj więcej"
+  },
+  "project": {
+    "authors": "Autorzy",
+    "back": "Powrót do Projektów"
   }
 }
