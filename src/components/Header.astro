@@ -35,6 +35,16 @@ const basePath = lang === 'en' ? base : `${base}${lang}/`;
     </nav>
 
     <div class="site-header__actions">
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-pressed="false"
+        aria-label={t('nav.theme')}
+        data-text-dark={t('nav.themeDark')}
+        data-text-light={t('nav.themeLight')}
+      >
+        <span class="theme-toggle__text">{t('nav.themeDark')}</span>
+      </button>
       <LangSwitcher currentLang={lang} currentPath={Astro.url.pathname} t={t} />
       <button
         class="site-nav__toggle"
@@ -53,11 +63,61 @@ const basePath = lang === 'en' ? base : `${base}${lang}/`;
 <script>
   const toggle = document.querySelector('.site-nav__toggle') as HTMLButtonElement | null;
   const menu   = document.querySelector('#mobile-menu') as HTMLElement | null;
+  const themeToggle = document.querySelector('.theme-toggle') as HTMLButtonElement | null;
+  const root = document.documentElement;
+  const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+  const getStoredTheme = () => {
+    const theme = localStorage.getItem('theme');
+    return theme === 'light' || theme === 'dark' ? theme : null;
+  };
+
+  const getActiveTheme = () => {
+    return getStoredTheme() ?? (colorSchemeQuery.matches ? 'dark' : 'light');
+  };
+
+  const syncThemeToggle = () => {
+    if (!themeToggle) return;
+
+    const activeTheme = getActiveTheme();
+    const isDark = activeTheme === 'dark';
+    const nextThemeLabel = isDark
+      ? (themeToggle.dataset.textLight ?? 'Light')
+      : (themeToggle.dataset.textDark ?? 'Dark');
+
+    themeToggle.setAttribute('aria-pressed', String(isDark));
+    themeToggle.dataset.theme = activeTheme;
+
+    const textElement = themeToggle.querySelector('.theme-toggle__text');
+    if (textElement) {
+      textElement.textContent = nextThemeLabel;
+    }
+  };
+
+  const setTheme = (theme: 'light' | 'dark') => {
+    root.dataset.theme = theme;
+    localStorage.setItem('theme', theme);
+    syncThemeToggle();
+  };
 
   toggle?.addEventListener('click', () => {
     const isOpen = menu?.classList.toggle('is-open');
     toggle.setAttribute('aria-expanded', String(isOpen));
   });
+
+  themeToggle?.addEventListener('click', () => {
+    const nextTheme = getActiveTheme() === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+  });
+
+  colorSchemeQuery.addEventListener('change', () => {
+    if (!getStoredTheme()) {
+      root.dataset.theme = colorSchemeQuery.matches ? 'dark' : 'light';
+      syncThemeToggle();
+    }
+  });
+
+  syncThemeToggle();
 
   // Close on outside click
   document.addEventListener('click', (e) => {

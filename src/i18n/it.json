@@ -8,7 +8,10 @@
     "about": "About",
     "partners": "Partner",
     "identity": "Identità",
-    "toggle": "Apri/chiudi menu"
+    "toggle": "Apri/chiudi menu",
+    "theme": "Cambia tema colore",
+    "themeDark": "Scuro",
+    "themeLight": "Chiaro"
   },
   "lang": {
     "switch": "Cambia lingua",
@@ -24,7 +27,7 @@
   "home": {
     "intro": "Un programma intensivo blended che esplora il linguaggio delle immagini come strumento di comunicazione universale.",
     "keywords": "Parole chiave",
-    "partners_heading": "Università partner",
+    "partners_heading": "Partners",
     "program_heading": "Il programma",
     "lectures_heading": "Lezioni",
     "projects_heading": "Progetti"

@@ -8,7 +8,10 @@
     "about": "O projekcie",
     "partners": "Partnerzy",
     "identity": "Identyfikacja",
-    "toggle": "Otwórz/zamknij menu"
+    "toggle": "Otwórz/zamknij menu",
+    "theme": "Przełącz motyw kolorystyczny",
+    "themeDark": "Ciemny",
+    "themeLight": "Jasny"
   },
   "lang": {
     "switch": "Zmień język",

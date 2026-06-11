@@ -8,7 +8,10 @@
     "about": "About",
     "partners": "Partners",
     "identity": "Identity",
-    "toggle": "Open/close menu"
+    "toggle": "Open/close menu",
+    "theme": "Toggle color theme",
+    "themeDark": "Dark",
+    "themeLight": "Light"
   },
   "lang": {
     "switch": "Change language",
@@ -24,7 +27,7 @@
   "home": {
     "intro": "A blended intensive programme exploring picture language as a universal communication tool.",
     "keywords": "Keywords",
-    "partners_heading": "Partner universities",
+    "partners_heading": "Partners",
     "program_heading": "The programme",
     "lectures_heading": "Lectures",
     "projects_heading": "Projects"

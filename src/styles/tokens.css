@@ -23,6 +23,9 @@
   --color-text-muted:  var(--color-gray-2);
   --color-border:      var(--color-gray-1);
   --color-focus:       var(--color-primary);
+   --color-header-bg:   var(--color-white);
+   --color-header-text: var(--color-black);
+   --color-header-border: var(--color-gray-1);
 
   /* =============================================
      TYPOGRAPHY
@@ -116,11 +119,38 @@
   :root {
     --color-bg:         var(--color-primary-dark);
     --color-bg-subtle:  #1a1a1a;
-    --color-surface:    #1a1a1a;
+      --color-surface:    #1a1a1a;
     --color-text:       #f0f0f0;
     --color-text-muted: #878787;
     --color-border:     #2a2a2a;
+      --color-header-bg:  var(--color-primary-dark);
+      --color-header-text: var(--color-white);
+      --color-header-border: color-mix(in srgb, var(--color-white) 20%, var(--color-primary-dark));
   }
+}
+
+:root[data-theme='light'] {
+   --color-bg:          var(--color-white);
+   --color-bg-subtle:   var(--color-gray-1);
+   --color-surface:     var(--color-white);
+   --color-text:        var(--color-black);
+   --color-text-muted:  var(--color-gray-2);
+   --color-border:      var(--color-gray-1);
+   --color-header-bg:   var(--color-white);
+   --color-header-text: var(--color-black);
+   --color-header-border: var(--color-gray-1);
+}
+
+:root[data-theme='dark'] {
+   --color-bg:          var(--color-primary-dark);
+   --color-bg-subtle:   #1a1a1a;
+   --color-surface:     #1a1a1a;
+   --color-text:        #f0f0f0;
+   --color-text-muted:  #878787;
+   --color-border:      #2a2a2a;
+   --color-header-bg:   var(--color-primary-dark);
+   --color-header-text: var(--color-white);
+   --color-header-border: color-mix(in srgb, var(--color-white) 20%, var(--color-primary-dark));
 }
 
 /* =============================================
