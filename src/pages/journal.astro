@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import { getLangFromUrl, type Locale, useTranslations } from '../i18n/utils';
+import { getEntry } from 'astro:content';
+
+export interface Props {
+  lang?: Locale;
+}
+
+const lang = (Astro.props.lang ?? getLangFromUrl(Astro.url)) as Locale;
+const t = useTranslations(lang);
+const entry = await getEntry('journal', lang);
+const days = entry?.data.days ?? [];
+---
+
+<Base title={t('journal.title')} lang={lang} t={t}>
+  <div class="page-header container">
+    <h1>{entry?.data.title ?? t('journal.title')}</h1>
+    {entry?.data.description && <p>{entry.data.description}</p>}
+  </div>
+
+  <section class="journal container" aria-label={t('journal.title')}>
+    {days.map((item) => (
+      <article class="journal-day">
+        <h2>{item.day}</h2>
+        <p>{item.description}</p>
+        <div class="journal-day__gallery">
+          {item.images.map((src) => (
+            <figure class="journal-day__item">
+              <img src={src} alt={item.day} loading="lazy" decoding="async" />
+            </figure>
+          ))}
+        </div>
+      </article>
+    ))}
+  </section>
+</Base>

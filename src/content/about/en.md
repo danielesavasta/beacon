@@ -36,6 +36,7 @@ partners:
     people:
       - "Professor PhD Ewa Satalecka"
       - "Researcher PhD Jan Piechota"
+      - "Marcin Wichrowski"
     students:
       - "Anna Oleś"
       - "Ada Baradziej-Szczęśniak"

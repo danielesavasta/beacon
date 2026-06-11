@@ -1,0 +1,12 @@
+---
+import Page from '../projects.astro';
+import { defaultLocale, locales } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return locales
+    .filter((lang) => lang !== defaultLocale)
+    .map((lang) => ({ params: { lang } }));
+}
+---
+
+<Page lang={Astro.params.lang} />

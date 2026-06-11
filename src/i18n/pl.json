@@ -3,6 +3,7 @@
     "label": "Główna nawigacja",
     "home": "Strona główna",
     "program": "Program",
+    "journal": "Dziennik",
     "lectures": "Wykłady",
     "projects": "Projekty",
     "about": "O projekcie",
@@ -37,6 +38,9 @@
     "online": "Sesja online",
     "inperson": "Sesja stacjonarna",
     "timetable": "Tygodniowy plan zajęć"
+  },
+  "journal": {
+    "title": "Dziennik"
   },
   "lectures": {
     "title": "Wykłady",

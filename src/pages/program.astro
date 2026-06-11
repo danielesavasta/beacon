@@ -1,11 +1,18 @@
 ---
 import Base from '../layouts/Base.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, type Locale, useTranslations } from '../i18n/utils';
 import { getEntry, render } from 'astro:content';
 
-const lang = getLangFromUrl(Astro.url);
+export interface Props {
+  lang?: Locale;
+}
+
+const lang = (Astro.props.lang ?? getLangFromUrl(Astro.url)) as Locale;
 const t = useTranslations(lang);
 const entry = await getEntry('program', lang);
+if (!entry) {
+  throw new Error(`Missing program content for locale: ${lang}`);
+}
 const { Content } = await render(entry);
 ---
 
@@ -17,60 +24,3 @@ const { Content } = await render(entry);
     <Content />
   </section>
 </Base>
-
-<style>
-.page-header {
-  padding-block: var(--space-12) var(--space-8);
- 
-}
-
-.section {
-  padding-block: var(--space-12);
-}
-
-.section h3 {
-  margin-block: var(--space-8) var(--space-4);
-}
-
-.mt {
-  margin-block-start: var(--space-8);
-}
-
-.schedule-table {
-  inline-size: 100%;
-  border-collapse: collapse;
-  margin-block-start: var(--space-4);
-}
-
-.schedule-table th,
-.schedule-table td {
-  text-align: start;
-  padding: var(--space-3) var(--space-4);
-  border-bottom: var(--border-width) solid var(--color-border);
-}
-
-.schedule-table th {
-  font-weight: var(--font-bold);
-  background-color: var(--color-bg-subtle);
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.schedule-table td:first-child {
-  white-space: nowrap;
-  font-weight: var(--font-medium);
-  color: var(--color-text-muted);
-}
-
-.table-wrapper {
-  overflow-x: auto;
-  margin-block-start: var(--space-4);
-  border: var(--border-width) solid var(--color-border);
-  border-radius: var(--radius-md);
-}
-
-.schedule-table--week {
-  min-inline-size: 50rem;
-}
-</style>

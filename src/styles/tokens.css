@@ -41,8 +41,8 @@
   --font-black:     900;
 
    /* Modular scale (base and ratio) */
-   --text-base: 1.15rem;
-   --ratio: 1.333;
+   --text-base: 1.25rem;
+   --ratio: 1.2;
 
    --text-xs:   calc(var(--text-base) / (var(--ratio) * var(--ratio)));
    --text-sm:   calc(var(--text-base) / var(--ratio));

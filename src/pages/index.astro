@@ -1,16 +1,23 @@
 ---
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, type Locale, useTranslations } from '../i18n/utils';
 import { getEntry, render } from 'astro:content';
 
-const lang = getLangFromUrl(Astro.url);
+export interface Props {
+  lang?: Locale;
+}
+
+const lang = (Astro.props.lang ?? getLangFromUrl(Astro.url)) as Locale;
 const t = useTranslations(lang);
 const entry = await getEntry('home', lang);
+if (!entry) {
+  throw new Error(`Missing home content for locale: ${lang}`);
+}
 const { Content } = await render(entry);
 ---
 
-<Base title="Home" lang={lang} t={t} hideHeaderLogo={true}>
+<Base title={entry.data.title} lang={lang} t={t} hideHeaderLogo={true}>
   <Hero lang={lang} t={t} />
 
   <section class="section container prose">
@@ -18,7 +25,7 @@ const { Content } = await render(entry);
   </section>
 
   <section class="section container" aria-labelledby="partners-heading">
-    <h3 id="partners-heading">{t('home.partners_heading')}</h2>
+    <h2 id="partners-heading">{t('home.partners_heading')}</h2>
     <ul class="partners-grid" role="list">
       <li class="partner-logo-item"><a href="https://www.unipa.it/" target="_blank" rel="noopener noreferrer"><img src={`${import.meta.env.BASE_URL}partners/logoUnipa.png`} alt="University of Palermo – DARCH" /></a></li>
       <li class="partner-logo-item"><a href="https://www.ieu.edu.tr/tr" target="_blank" rel="noopener noreferrer"><img src={`${import.meta.env.BASE_URL}partners/logoIEU.png`} alt="Izmir University of Economics – FFAD" /></a></li>
@@ -32,50 +39,3 @@ const { Content } = await render(entry);
     </ul>
   </section>
 </Base>
-
-<style>
-.section {
-  padding-block: var(--space-16);
-}
-
-.intro-text {
-  font-size: clamp(var(--text-lg), 2.5vw, var(--text-2xl));
-  font-weight: var(--font-light);
-  line-height: var(--leading-loose);
-  max-inline-size: 60ch;
-}
-
-.partners-grid {
-  list-style: none;
-  padding: 0;
-  margin-block-start: var(--space-8);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-8);
-}
-
-.partner-logo-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.partner-logo-item img {
-  display: block;
-  max-block-size: 3.5rem;
-  max-inline-size: 9rem;
-  inline-size: auto;
-  object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: filter 0.2s ease, opacity 0.2s ease;
-}
-
-.partner-logo-item:hover img,
-.partner-logo-item img:focus-visible {
-  filter: grayscale(0%);
-  opacity: 1;
-}
-</style>
-

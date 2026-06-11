@@ -107,6 +107,10 @@
   font-size: var(--text-sm);
 }
 
+.text-italic {
+  font-style: italic;
+}
+
 /* Markdown content */
 .prose {
   max-inline-size: 70ch;
@@ -154,7 +158,6 @@
 
 .prose th {
   font-weight: var(--font-bold);
-  background-color: var(--color-bg-subtle);
   color: var(--color-text-muted);
   font-size: var(--text-xs);
   text-transform: uppercase;
@@ -162,8 +165,12 @@
 }
 
 .main {
-  background: url('../beacon_logo.svg') no-repeat left 5rem;
+  background: var(--main-bg-image) no-repeat left 5rem;
   background-size: 50rem;
   background-attachment: fixed;
   min-height: 90dvh;
+}
+
+.main--no-bg {
+  background: none;
 }

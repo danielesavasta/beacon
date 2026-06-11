@@ -24,6 +24,19 @@ export const collections = {
     loader: glob({ pattern: '**/*.md', base: './src/content/program' }),
     schema: z.object({ ...pageBase }),
   }),
+  journal: defineCollection({
+    loader: glob({ pattern: '**/*.md', base: './src/content/journal' }),
+    schema: z.object({
+      ...pageBase,
+      days: z.array(
+        z.object({
+          day: z.string(),
+          description: z.string(),
+          images: z.array(z.string()).min(1),
+        })
+      ).default([]),
+    }),
+  }),
   lectures: defineCollection({
     loader: glob({ pattern: '**/*.md', base: './src/content/lectures' }),
     schema: z.object({
@@ -32,6 +45,7 @@ export const collections = {
         z.object({
           label: z.string(),
           youtubeId: z.string(),
+          daily: z.array(z.string()).optional(),
         })
       ).default([]),
     }),

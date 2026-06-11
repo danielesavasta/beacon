@@ -3,6 +3,7 @@
     "label": "Main navigation",
     "home": "Home",
     "program": "Program",
+    "journal": "Journal",
     "lectures": "Lectures",
     "projects": "Projects",
     "about": "About",
@@ -38,6 +39,9 @@
     "online": "Online session",
     "inperson": "In-person session",
     "timetable": "Weekly timetable"
+  },
+  "journal": {
+    "title": "Journal"
   },
   "lectures": {
     "title": "Lectures",

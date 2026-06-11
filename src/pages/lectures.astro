@@ -1,11 +1,18 @@
 ---
 import Base from '../layouts/Base.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, type Locale, useTranslations } from '../i18n/utils';
 import { getEntry, render } from 'astro:content';
 
-const lang = getLangFromUrl(Astro.url);
+export interface Props {
+  lang?: Locale;
+}
+
+const lang = (Astro.props.lang ?? getLangFromUrl(Astro.url)) as Locale;
 const t = useTranslations(lang);
 const entry = await getEntry('lectures', lang);
+if (!entry) {
+  throw new Error(`Missing lectures content for locale: ${lang}`);
+}
 const { Content } = await render(entry);
 const sessions = entry.data.sessions;
 ---
@@ -18,7 +25,7 @@ const sessions = entry.data.sessions;
     <Content />
   </section>
 
-  <section class="section container">
+  <section class="section container prose">
     <div class="lectures-grid">
       {sessions.map((session) => (
         <article class="lecture-card">
@@ -33,6 +40,13 @@ const sessions = entry.data.sessions;
           </div>
           <div class="lecture-card__body">
             <h2 class="lecture-card__title">{session.label}</h2>
+            {session.daily && session.daily.length > 0 && (
+              <ul class="lecture-card__daily" role="list">
+                {session.daily.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            )}
             <a class="btn btn--secondary" href={`https://www.youtube.com/watch?v=${session.youtubeId}`} target="_blank" rel="noopener noreferrer">
               {t('lectures.watch')}
             </a>
@@ -42,54 +56,3 @@ const sessions = entry.data.sessions;
     </div>
   </section>
 </Base>
-
-<style>
-.page-header {
-  padding-block: var(--space-12) var(--space-8);
-  border-bottom: var(--border-width) solid var(--color-border);
-}
-
-.section {
-  padding-block: var(--space-12);
-}
-
-.lectures-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
-  gap: var(--space-8);
-}
-
-.lecture-card {
-  border: var(--border-width) solid var(--color-border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  background-color: var(--color-surface);
-}
-
-.lecture-card__embed {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  background-color: var(--color-black);
-}
-
-.lecture-card__embed iframe {
-  position: absolute;
-  inset: 0;
-  inline-size: 100%;
-  block-size: 100%;
-  border: none;
-}
-
-.lecture-card__body {
-  padding: var(--space-6);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-}
-
-.lecture-card__title {
-  font-size: var(--text-lg);
-  font-weight: var(--font-bold);
-}
-</style>

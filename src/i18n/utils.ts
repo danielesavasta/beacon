@@ -26,3 +26,18 @@ export function getLocalePath(lang: Locale, path: string = '') {
   if (lang === defaultLocale) return `${base}${path}`;
   return `${base}${lang}/${path}`;
 }
+
+export function getLocalizedPath(lang: Locale, currentPath: string) {
+  const base = import.meta.env.BASE_URL ?? '/';
+  const normalizedBase = base.endsWith('/') ? base : `${base}/`;
+  const currentRelativePath = currentPath.startsWith(normalizedBase)
+    ? currentPath.slice(normalizedBase.length)
+    : currentPath.replace(/^\//, '');
+  const pathWithoutLocale = currentRelativePath.replace(/^(it|pl)\//, '');
+
+  if (lang === defaultLocale) {
+    return `${normalizedBase}${pathWithoutLocale}`;
+  }
+
+  return `${normalizedBase}${lang}/${pathWithoutLocale}`;
+}

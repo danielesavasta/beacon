@@ -1,5 +1,5 @@
 ---
-import { type Locale, locales } from '../i18n/utils';
+import { getLocalizedPath, type Locale, locales } from '../i18n/utils';
 
 export interface Props {
   currentLang: Locale;
@@ -7,7 +7,7 @@ export interface Props {
   t: (key: string) => string;
 }
 
-const { currentLang, t } = Astro.props;
+const { currentLang, currentPath, t } = Astro.props;
 
 const langLabels: Record<Locale, string> = {
   it: 'IT',
@@ -15,12 +15,10 @@ const langLabels: Record<Locale, string> = {
   pl: 'PL',
 };
 
-// Build alternate paths for each locale
-const base = import.meta.env.BASE_URL;
 const langPaths: Record<Locale, string> = {
-  en: base,
-  it: `${base}it/`,
-  pl: `${base}pl/`,
+  en: getLocalizedPath('en', currentPath),
+  it: getLocalizedPath('it', currentPath),
+  pl: getLocalizedPath('pl', currentPath),
 };
 ---
 
