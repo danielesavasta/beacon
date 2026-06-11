@@ -7,9 +7,9 @@ partners:
     url: "https://www.unipa.it/"
     logo: "logoUnipa.png"
     people:
-      - "Professor PhD Cinzia Ferrara"
-      - "Researcher PhD Marcello Costa"
-      - "PhD Elia Maniscalco"
+      - "Cinzia Ferrara"
+      - "Marcello Costa"
+      - "Elia Maniscalco"
     students:
       - "Francesco Amato"
       - "Marcia Valeria Ayquipa Quevedo"
@@ -22,20 +22,13 @@ partners:
       - "Giacomo Maurizio Schifano"
       - "Marco Maggiore"
       - "Desiree Maria Tavormina"
-  - name: "Izmir University of Economics – FFAD, Visual Communication Design"
-    location: "İzmir, Turcja"
-    url: "https://www.ieu.edu.tr/tr"
-    logo: "logoIEU.png"
-    people:
-      - "Assistant Professor PhD Daniele Savasta"
-    students: []
   - name: "PJATK – Polsko-Japońska Akademia Technik Komputerowych"
     location: "Kraków, Polska"
     url: "https://pja.edu.pl/"
     logo: "logoPJATK.png"
     people:
-      - "Professor PhD Ewa Satalecka"
-      - "Researcher PhD Jan Piechota"
+      - "Ewa Satalecka"
+      - "Jan Piechota"
       - "Marcin Wichrowski"
     students:
       - "Anna Oleś"
@@ -54,23 +47,34 @@ partners:
   - name: "Sopot University of Applied Sciences"
     location: "Sopot, Polska"
     logo: "logoSopocka.png"
+    url: "https://sopocka.edu.pl/sopot-welcome/"
     people:
-      - "Prof. Magdalena Berlińska"
+      - "Magdalena Berlińska"
+      - "Beata"
     students:
       - "Anna Arendt"
       - "Iga Kwiek"
       - "Maja Chachaj"
       - "Blanka Pawłowicz"
       - "Natalia Partyka"
+  - name: "Izmir University of Economics – FFAD, Visual Communication Design"
+    location: "İzmir, Turcja"
+    url: "https://www.ieu.edu.tr/tr"
+    logo: "logoIEU.png"
+    people:
+      - "Daniele Savasta"
+    students: []
   - name: "ESAD – Escola Superior de Artes e Design"
     logo: "logoEsad.png"
+    url: "https://esad.pt/en"
     people:
-      - "Associate Professor Maria Milano"
+      - "Maria Milano"
     students: []
   - name: "UBA – Universidad de Buenos Aires, FADU"
     location: "Buenos Aires, Argentyna"
     url: "https://www.fadu.uba.ar/"
     logo: "logoFADU.png"
+    url: "https://www.uc.cl/en/academic-units/school-of-design/"
     people:
       - "Alejandra Carbone"
     students: []
@@ -78,9 +82,9 @@ partners:
     location: "Chile"
     logo: "logoChile.png"
     people:
-      - "Professor Javier Carrasco"
-      - "Associate Professor Rodrigo Ramírez"
-      - "Assistant Professor Alejandra Amenábar"
+      - "Javier Carrasco"
+      - "Rodrigo Ramírez"
+      - "Alejandra Amenábar"
     students: []
   - name: "Hi-pe"
     url: "https://www.hi-pe.live/"

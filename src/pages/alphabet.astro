@@ -66,7 +66,7 @@ const latin: AlphaEntry[] = [
   { l: 'W', word: 'Wolność',             lang: 'Polish (pl)*',        value: 'Liberty' },
   { l: 'X', word: 'Xenofilia',           lang: 'Portuguese (pt)*',   value: 'Openness †' },
   { l: 'Y', word: 'Yhteisvastuullisuus', lang: 'Finnish (fi)*',       value: 'Solidarity' },
-  { l: 'Z', word: 'Zusammenhalt',        lang: 'German (de)*',        value: 'Cohesion †' },
+  { l: 'Z', word: 'Zusammenhalt',        lang: 'German (de)*',        value: 'Cohesion †', image: 'Zusammenhalt_Anna_Oles.svg' },
 ];
 
 const cyrillic: AlphaEntry[] = [
@@ -121,7 +121,10 @@ const sortedGreek = [...greek].sort((a, b) => a.l.localeCompare(b.l, 'el'));
               <div class="alpha-lang">{e.lang}</div>
               <span class="alpha-badge">{e.value}</span>
             </div>
-            <div class="alpha-card__back"></div>
+            <div class="alpha-card__back">
+              {e.image && <img src={e.image} alt={e.word} />}
+              <div class="alpha-word">{e.word}</div>
+            </div>
           </div>
         </div>
       ))}
