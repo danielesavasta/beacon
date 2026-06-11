@@ -27,11 +27,7 @@ const basePath = lang === 'en' ? base : `${base}${lang}/`;
         <span class="site-nav__bar" aria-hidden="true"></span>
       </button>
       
-    {!hideLogo && (
-      <a class="site-header__logo" href={basePath} aria-label="Beacon Home">
-        <img src={`${base}beacon_logo.svg`} alt="Beacon — Building a Visual Alphabet for the European Values" class="site-header__logo-img" />
-      </a>
-    )}
+
 
     <nav class="site-nav" aria-label={t('nav.label')}>
       <ul class="site-nav__list" role="list" id="mobile-menu">
@@ -58,6 +54,7 @@ const basePath = lang === 'en' ? base : `${base}${lang}/`;
 
     </div>
   </div>
+  
 </header>
 
 <script>

@@ -15,8 +15,11 @@ export interface Props {
   hideHeaderLogo?: boolean;
 }
 
+
 const { title, description = 'Beacon — Building a Visual Alphabet for the European Values | BIP 2024-1-IT02-KA131-HED-000197121-2', lang, t, hideHeaderLogo = false } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const basePath = lang === 'en' ? base : `${base}${lang}/`;
+
 ---
 
 <!doctype html>
@@ -50,6 +53,11 @@ const base = import.meta.env.BASE_URL;
     <a class="skip-link" href="#main-content">{lang === 'it' ? 'Vai al contenuto' : lang === 'en' ? 'Skip to content' : 'Przejdź do treści'}</a>
     <Header lang={lang} t={t} hideLogo={hideHeaderLogo} />
     <main id="main-content">
+          {!hideHeaderLogo && (
+      <span class="site-header__logo" aria-label="Beacon Home">
+        <img src={`${base}beacon_logo.svg`} alt="Beacon — Building a Visual Alphabet for the European Values" class="site-header__logo-img" />
+      </span>
+    )}
       <slot />
     </main>
     <Footer lang={lang} t={t} />
