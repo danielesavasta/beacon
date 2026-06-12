@@ -17,7 +17,7 @@
 
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(16rem,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(14rem,1fr));
   gap: var(--space-6);
 }
 
@@ -49,12 +49,14 @@
 }
 
 .partner-card__link {
+  font-size: var(--text-sm);
   color: var(--color-secondary);
   text-decoration: none;
 }
 
 .partner-card__link:hover {
   text-decoration: underline;
+  color: var(--color-secondary);
 }
 
 .partner-card__people {
@@ -72,7 +74,7 @@
 .partner-card__students summary {
   cursor: pointer;
   font-weight: var(--font-medium);
-  color: var(--color-primary);
+  color: var(--color-text);
 }
 
 .partner-card__students ul {
@@ -82,7 +84,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
-  color: var(--color-text-muted);
+  color: var(--color-text);
 }
 
 .partners-grid--logos {
@@ -98,7 +100,6 @@
 .partner-logo-item {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .partner-logo-item img {
@@ -180,7 +181,7 @@
   border-radius: var(--radius-md);
   padding: var(--space-6);
   background-color: var(--color-bg);
-  width: 80rem;
+  overflow: hidden;
 }
 
 .journal-day h2 {
@@ -189,7 +190,7 @@
 
 .journal-day p {
   margin-block: var(--space-3) var(--space-6);
-  color: var(--color-text-muted);
+  color: var(--color-text);
 }
 
 .journal-day__gallery {

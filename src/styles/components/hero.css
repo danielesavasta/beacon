@@ -35,14 +35,7 @@
 .hero__logo {
   grid-column:1 / -1;
   grid-row: 1 / -1;
-  inset-block-start: var(--space-6);
-  inset-inline-start: 50%;
-  transform: translateX(00%) translateY(-0.75rem);
-  inline-size: min(100rem, 100vw);
-  block-size: auto;
-  transition: opacity 0.25s ease, transform 0.25s ease;
   z-index: 2;
-  pointer-events: none;
 }
 
 /*.hero__logo.is-visible {

@@ -1,5 +1,5 @@
 .site-header {
-  background-color: var(--color-header-bg);
+  background-color: var(--color-primary-dark-transparent);
   color: var(--color-header-text);
   position: sticky;
   top: 0;
