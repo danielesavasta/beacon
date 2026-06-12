@@ -33,6 +33,7 @@ export const collections = {
           day: z.string(),
           description: z.string(),
           images: z.array(z.string()).default([]),
+          videos: z.array(z.string()).default([]),
         })
       ).default([]),
     }),

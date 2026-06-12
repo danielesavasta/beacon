@@ -21,30 +21,48 @@ const days = entry?.data.days ?? [];
   </div>
 
   <section class="journal container" aria-label={t('journal.title')}>
-    {days.map((item) => (
-      <article class="journal-day">
-        <h2>{item.day}</h2>
-        <p>{item.description}</p>
-        {item.images.length > 0 && (
-          <div
-            class="journal-day__gallery"
-            data-images={JSON.stringify(item.images)}
-          >
-            {item.images.map((src, i) => (
-              <figure class="journal-day__item">
-                <img
-                  src={src}
-                  alt={item.day}
-                  data-index={i}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-            ))}
-          </div>
-        )}
-      </article>
-    ))}
+    {days.map((item) => {
+      const videos = item.videos ?? [];
+      const images = item.images ?? [];
+      const media = [
+        ...videos.map(src => ({ src, type: 'video' as const })),
+        ...images.map(src => ({ src, type: 'image' as const })),
+      ];
+      return (
+        <article class="journal-day">
+          <h2>{item.day}</h2>
+          <p>{item.description}</p>
+          {media.length > 0 && (
+            <div
+              class="journal-day__gallery"
+              data-media={JSON.stringify(media)}
+            >
+              {media.map((m, i) =>
+                m.type === 'video' ? (
+                  <figure class="journal-day__item journal-day__item--video" data-index={i}>
+                    <video src={m.src} preload="metadata" muted playsinline></video>
+                    <span class="journal-day__play-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </span>
+                  </figure>
+                ) : (
+                  <figure class="journal-day__item" data-index={i}>
+                    <img
+                      src={m.src}
+                      alt={item.day}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
+                )
+              )}
+            </div>
+          )}
+        </article>
+      );
+    })}
   </section>
 
   <dialog
@@ -55,8 +73,9 @@ const days = entry?.data.days ?? [];
   >
     <div class="lightbox__inner">
       <button class="lightbox__close" id="lightbox-close" aria-label={t('gallery.close')}>✕</button>
-      <div class="lightbox__img-wrap">
+      <div class="lightbox__media-wrap">
         <img class="lightbox__img" id="lightbox-img" src="" alt="" />
+        <video class="lightbox__video" id="lightbox-video" controls playsinline></video>
       </div>
       <div class="lightbox__controls">
         <div class="lightbox__dots" id="lightbox-dots" role="tablist" aria-label={t('gallery.label')}></div>
@@ -73,13 +92,16 @@ const days = entry?.data.days ?? [];
 </Base>
 
 <script>
+  type MediaItem = { src: string; type: 'image' | 'video' };
+
   const dialog = document.getElementById('lightbox') as HTMLDialogElement;
   const imgEl = document.getElementById('lightbox-img') as HTMLImageElement;
+  const videoEl = document.getElementById('lightbox-video') as HTMLVideoElement;
   const closeBtn = document.getElementById('lightbox-close') as HTMLButtonElement;
   const dotsEl = document.getElementById('lightbox-dots') as HTMLDivElement;
   const playBtn = document.getElementById('lightbox-play') as HTMLButtonElement;
 
-  let images: string[] = [];
+  let media: MediaItem[] = [];
   let current = 0;
   let timer: ReturnType<typeof setInterval> | null = null;
 
@@ -87,52 +109,71 @@ const days = entry?.data.days ?? [];
     gallery.addEventListener('click', (e) => {
       const fig = (e.target as Element).closest('.journal-day__item') as HTMLElement | null;
       if (!fig) return;
-      images = JSON.parse(gallery.dataset.images ?? '[]');
-      if (!images.length) return;
-      const img = fig.querySelector('img');
-      current = img ? Number(img.dataset.index ?? 0) : 0;
+      media = JSON.parse(gallery.dataset.media ?? '[]');
+      if (!media.length) return;
+      current = Number(fig.dataset.index ?? 0);
       openLightbox();
     });
   });
 
   function openLightbox() {
     renderDots();
-    updateImage();
+    updateMedia();
     dialog.showModal();
     closeBtn.focus();
   }
 
-  function updateImage() {
-    imgEl.src = images[current];
-    imgEl.alt = '';
+  function updateMedia() {
+    const item = media[current];
+    const isVideo = item.type === 'video';
+
+    imgEl.hidden = isVideo;
+    videoEl.hidden = !isVideo;
+    playBtn.hidden = isVideo;
+
     dotsEl.querySelectorAll<HTMLButtonElement>('.lightbox__dot').forEach((dot, i) => {
       const active = i === current;
       dot.classList.toggle('lightbox__dot--active', active);
       dot.setAttribute('aria-selected', String(active));
     });
+
+    if (isVideo) {
+      stopPlay();
+      videoEl.src = item.src;
+      videoEl.load();
+    } else {
+      videoEl.pause();
+      videoEl.src = '';
+      imgEl.src = item.src;
+      imgEl.alt = '';
+    }
   }
 
   function renderDots() {
     dotsEl.innerHTML = '';
-    images.forEach((_, i) => {
+    media.forEach((_, i) => {
       const dot = document.createElement('button');
       dot.className = 'lightbox__dot' + (i === current ? ' lightbox__dot--active' : '');
       dot.setAttribute('role', 'tab');
       dot.setAttribute('aria-selected', String(i === current));
       dot.setAttribute('aria-label', String(i + 1));
-      dot.addEventListener('click', () => { current = i; updateImage(); });
+      dot.addEventListener('click', () => { current = i; updateMedia(); });
       dotsEl.appendChild(dot);
     });
   }
 
   function navigate(dir: number) {
-    current = (current + dir + images.length) % images.length;
-    updateImage();
+    current = (current + dir + media.length) % media.length;
+    updateMedia();
   }
 
   closeBtn.addEventListener('click', () => dialog.close());
 
-  dialog.addEventListener('close', stopPlay);
+  dialog.addEventListener('close', () => {
+    stopPlay();
+    videoEl.pause();
+    videoEl.src = '';
+  });
 
   dialog.addEventListener('keydown', (e: KeyboardEvent) => {
     if (e.key === 'ArrowRight') navigate(1);
