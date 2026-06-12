@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 744 758" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1.67631,0,0,1.67631,356.757577,381.993412)">
+        <g transform="matrix(1,0,0,1,-304.53,-310.045)">
+            <circle cx="152.87" cy="140.21" r="41.19"/>
+            <circle cx="206.89" cy="202.47" r="41.19"/>
+            <circle cx="261.86" cy="263.96" r="41.19"/>
+            <circle cx="398.83" cy="201.9" r="41.19"/>
+            <circle cx="257.71" cy="137.6" r="41.19"/>
+            <circle cx="344.62" cy="263.72" r="41.19"/>
+            <circle cx="447.92" cy="136.01" r="41.19"/>
+            <circle cx="152.51" cy="470.98" r="41.19"/>
+            <circle cx="206.52" cy="408.72" r="41.19"/>
+            <circle cx="261.5" cy="347.23" r="41.19"/>
+            <circle cx="347.83" cy="472.38" r="41.19"/>
+            <circle cx="399.08" cy="408.17" r="41.19"/>
+            <circle cx="344.86" cy="346.34" r="41.19"/>
+            <circle cx="448.16" cy="474.05" r="41.19"/>
+            <circle cx="153.12" cy="140.8" r="14.79" style="fill:white;"/>
+            <circle cx="448.87" cy="474.39" r="14.79" style="fill:white;"/>
+            <circle cx="206.93" cy="201.37" r="14.79" style="fill:white;"/>
+            <circle cx="259.28" cy="138.36" r="14.79" style="fill:white;"/>
+            <circle cx="261.71" cy="264.37" r="14.79" style="fill:white;"/>
+            <circle cx="345.64" cy="264.07" r="14.79" style="fill:white;"/>
+            <circle cx="399.47" cy="201.41" r="14.79" style="fill:white;"/>
+            <circle cx="448.25" cy="134.86" r="14.79" style="fill:white;"/>
+            <circle cx="261.89" cy="347.59" r="14.79" style="fill:white;"/>
+            <circle cx="346.06" cy="345.96" r="14.79" style="fill:white;"/>
+            <circle cx="206.9" cy="407.88" r="14.79" style="fill:white;"/>
+            <circle cx="399.68" cy="407.25" r="14.79" style="fill:white;"/>
+            <circle cx="152.78" cy="471.34" r="14.79" style="fill:white;"/>
+            <circle cx="347.34" cy="472.36" r="14.79" style="fill:white;"/>
+        </g>
+    </g>
+</svg>
