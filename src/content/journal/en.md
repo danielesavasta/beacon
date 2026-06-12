@@ -30,5 +30,8 @@ days:
   - day: "Friday 12 June"
     description: "Final day with closing presentations, program wrap-up, and evening concert at the museum."
     images: []
+  - day: "Greetings from Palermo"
+    description: "Our host: the Department of Architecture at University of Palermo."
+    images: []
 
 ---

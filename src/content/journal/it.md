@@ -30,4 +30,7 @@ days:
   - day: "Venerdì 12 giugno"
     description: "Giornata finale con presentazioni conclusive, attività di chiusura e concerto serale al museo."
     images: []
+  - day: "Saluti da Palermo"
+    description: "Ospitati Dipartimento di Architettura dell'Università degli Studi di Palermo."
+    images: []
 ---

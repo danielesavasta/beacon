@@ -30,4 +30,9 @@ days:
   - day: "Piątek 12 czerwca"
     description: "Dzień finałowy z prezentacjami końcowymi, zamknięciem programu i wieczornym koncertem w muzeum."
     images: []
+  - day: "Pozdrowienia z Palermo"
+    description: "Nasz gospodarz: Wydział Architektury Uniwersytetu w Palermo."
+    images: []
 ---
+
+

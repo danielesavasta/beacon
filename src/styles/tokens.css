@@ -6,10 +6,10 @@
    --color-primary: #364b9b;
    --color-primary-dark: #263780;
    --color-primary-darker: #1e295c;
-   --color-primary-dark-transparent: #263780c7;
    --color-primary-light: #4a62b8;
    --color-secondary: #e63323;
    --color-secondary-dark: #c4291b;
+   --color-primary-dark-transparent: #263780c7;
 
    /* Greys */
    --color-white: #ffffff;
@@ -141,6 +141,7 @@
 @media (prefers-color-scheme: dark) {
    :root {
       --color-bg: var(--color-primary-dark);
+      --color-primary-dark-transparent: #263780c7;
       --color-bg-subtle: #1a1a1a;
       --color-surface: var(--color-primary-dark);
       --color-text: #f0f0f0;
@@ -162,6 +163,7 @@
    --color-header-bg: var(--color-white);
    --color-header-text: var(--color-black);
    --color-header-border: var(--color-gray-1);
+   --color-primary-dark-transparent: #dee1edc7;
 }
 
 :root[data-theme='dark'] {
