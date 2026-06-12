@@ -11,9 +11,9 @@ The BIP pursues one overarching aim: to foster critical, intercultural reflectio
 
 ## Pedagogical Approach and Structure
 The programme combines theory and practice through a studio-based, participatory pedagogy delivered mainly in English. It unfolds in two complementary stages:
-### Online phase (5 days)
+#### Online phase (5 days)
 interactive lectures, interdisciplinary seminars and collaborative sessions introduce the six values from historical, cultural and social perspectives. Students work synchronously (seminars, Q&A, discussion groups) and asynchronously (self-study, shared digital boards and documents), and are equipped with visual analysis methods and core design tools.
-### On-site phase in Palermo (5 days)
+#### On-site phase in Palermo (5 days)
 intensive co-design workshops transform prior reflection into concrete outputs. Multinational, multidisciplinary teams undertake iterative cycles of research, ideation, prototyping and collective review to develop pictograms, palettes, patterns and communication artefacts that will form the Visual Alphabet. Short expert inputs punctuate daily studio work; peer critique ensures coherence and quality.
 
 ## Planned Activities and International Contribution

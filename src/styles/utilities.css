@@ -202,3 +202,17 @@ h3{
  opacity: 0.5; 
  height: 18rem;
 }
+
+.section.container.home > * + * {
+  margin-top: 2rem;
+}
+
+.section.container.home h2 {
+  font-size: var(--text-xl);
+  max-inline-size: 33ch;
+  text-wrap: balance;
+}
+
+.section.container.home h4 {
+  font-size: var(--text-lg);
+}
