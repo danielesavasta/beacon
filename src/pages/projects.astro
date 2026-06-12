@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import '../styles/components/card.css';
 import { getLangFromUrl, type Locale, useTranslations } from '../i18n/utils';
 import { getCollection, getEntry, render } from 'astro:content';
+import { hasProjectMedia } from '../utils/projectMedia';
 
 export interface Props {
   lang?: Locale;
@@ -17,7 +18,7 @@ if (!entry) {
   throw new Error(`Missing projects content for locale: ${lang}`);
 }
 const { Content } = await render(entry);
-const projectItems = await getCollection('projectItems');
+const projectItems = (await getCollection('projectItems')).filter(p => hasProjectMedia(p.data.group));
 ---
 
 <Base title={t('projects.title')} lang={lang} t={t}>

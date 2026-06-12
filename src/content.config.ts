@@ -61,7 +61,7 @@ export const collections = {
       title: z.string(),
       authors: z.array(z.string()),
       description: z.string(),
-      images: z.array(z.string()).default([]),
+      group: z.string().optional(),
     }),
   }),
   about: defineCollection({

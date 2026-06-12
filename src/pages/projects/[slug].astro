@@ -1,8 +1,12 @@
 ---
 import Base from '../../layouts/Base.astro';
 import '../../styles/components/project-single.css';
+import '../../styles/components/lightbox.css';
 import { getLangFromUrl, type Locale, useTranslations } from '../../i18n/utils';
 import { getCollection, getEntry } from 'astro:content';
+import fs from 'node:fs';
+import path from 'node:path';
+import { hasProjectMedia } from '../../utils/projectMedia';
 
 export interface Props {
   lang?: Locale;
@@ -11,10 +15,12 @@ export interface Props {
 
 export async function getStaticPaths() {
   const projects = await getCollection('projectItems');
-  return projects.map((project) => ({
-    params: { slug: project.id },
-    props: { lang: 'en' as Locale },
-  }));
+  return projects
+    .filter((project) => hasProjectMedia(project.data.group))
+    .map((project) => ({
+      params: { slug: project.id },
+      props: { lang: 'en' as Locale },
+    }));
 }
 
 const lang = (Astro.props.lang ?? getLangFromUrl(Astro.url)) as Locale;
@@ -28,7 +34,26 @@ if (!entry) {
   throw new Error(`Missing project content for slug: ${slug}`);
 }
 
-const { title, authors, description, images } = entry.data;
+const { title, authors, description, group } = entry.data;
+
+const IMAGE_EXT = /\.(png|jpe?g|webp|gif)$/i;
+const VIDEO_EXT = /\.(mp4|webm|mov)$/i;
+
+type MediaItem = { src: string; type: 'image' | 'video' };
+let media: MediaItem[] = [];
+
+if (group) {
+  const dir = path.join(process.cwd(), 'public', 'projects', group);
+  if (fs.existsSync(dir)) {
+    media = fs.readdirSync(dir)
+      .filter((f: string) => IMAGE_EXT.test(f) || VIDEO_EXT.test(f))
+      .sort()
+      .map((f: string) => ({
+        src: `/projects/${group}/${f}`,
+        type: VIDEO_EXT.test(f) ? 'video' as const : 'image' as const,
+      }));
+  }
+}
 ---
 
 <Base title={title} lang={lang} t={t}>
@@ -48,15 +73,177 @@ const { title, authors, description, images } = entry.data;
           ← {t('project.back')}
         </a>
       </div>
-      <div class="project-images">
-        {images.map((src, i) => (
-          <img
-            src={src}
-            alt={`${title} — ${t('project.authors')} ${authors.join(', ')} — image ${i + 1}`}
-            loading={i === 0 ? 'eager' : 'lazy'}
-          />
-        ))}
-      </div>
+
+      {media.length > 0 && (
+        <div
+          class="project-gallery"
+          data-media={JSON.stringify(media)}
+        >
+          {media.map((m, i) =>
+            m.type === 'video' ? (
+              <figure class="project-gallery__item project-gallery__item--video" data-index={i}>
+                <video src={m.src} preload="metadata" muted playsinline></video>
+                <span class="project-gallery__play-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </span>
+              </figure>
+            ) : (
+              <figure class="project-gallery__item" data-index={i}>
+                <img
+                  src={m.src}
+                  alt={`${title} — ${i + 1}`}
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                />
+              </figure>
+            )
+          )}
+        </div>
+      )}
     </div>
   </section>
+
+  <dialog
+    id="lightbox"
+    class="lightbox"
+    aria-modal="true"
+    aria-label={t('gallery.label')}
+  >
+    <div class="lightbox__inner">
+      <button class="lightbox__close" id="lightbox-close" aria-label={t('gallery.close')}>✕</button>
+      <div class="lightbox__media-wrap">
+        <img class="lightbox__img" id="lightbox-img" src="" alt="" />
+        <video class="lightbox__video" id="lightbox-video" controls playsinline hidden></video>
+      </div>
+      <div class="lightbox__controls">
+        <div class="lightbox__dots" id="lightbox-dots" role="tablist" aria-label={t('gallery.label')}></div>
+        <button
+          class="lightbox__play"
+          id="lightbox-play"
+          aria-label={t('gallery.play')}
+          data-label-play={t('gallery.play')}
+          data-label-stop={t('gallery.stop')}
+        >▶</button>
+      </div>
+    </div>
+  </dialog>
 </Base>
+
+<script>
+  type MediaItem = { src: string; type: 'image' | 'video' };
+
+  const dialog = document.getElementById('lightbox') as HTMLDialogElement;
+  const imgEl = document.getElementById('lightbox-img') as HTMLImageElement;
+  const videoEl = document.getElementById('lightbox-video') as HTMLVideoElement;
+  const closeBtn = document.getElementById('lightbox-close') as HTMLButtonElement;
+  const dotsEl = document.getElementById('lightbox-dots') as HTMLDivElement;
+  const playBtn = document.getElementById('lightbox-play') as HTMLButtonElement;
+
+  let media: MediaItem[] = [];
+  let current = 0;
+  let timer: ReturnType<typeof setInterval> | null = null;
+
+  document.querySelectorAll<HTMLElement>('.project-gallery').forEach((gallery) => {
+    gallery.addEventListener('click', (e) => {
+      const fig = (e.target as Element).closest('.project-gallery__item') as HTMLElement | null;
+      if (!fig) return;
+      media = JSON.parse(gallery.dataset.media ?? '[]');
+      if (!media.length) return;
+      current = Number(fig.dataset.index ?? 0);
+      openLightbox();
+    });
+  });
+
+  function openLightbox() {
+    renderDots();
+    updateMedia();
+    dialog.showModal();
+    closeBtn.focus();
+  }
+
+  function updateMedia() {
+    const item = media[current];
+    const isVideo = item.type === 'video';
+
+    imgEl.hidden = isVideo;
+    videoEl.hidden = !isVideo;
+    playBtn.hidden = isVideo;
+
+    dotsEl.querySelectorAll<HTMLButtonElement>('.lightbox__dot').forEach((dot, i) => {
+      const active = i === current;
+      dot.classList.toggle('lightbox__dot--active', active);
+      dot.setAttribute('aria-selected', String(active));
+    });
+
+    if (isVideo) {
+      stopPlay();
+      videoEl.src = item.src;
+      videoEl.load();
+    } else {
+      videoEl.pause();
+      videoEl.src = '';
+      imgEl.src = item.src;
+      imgEl.alt = '';
+    }
+  }
+
+  function renderDots() {
+    dotsEl.innerHTML = '';
+    media.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'lightbox__dot' + (i === current ? ' lightbox__dot--active' : '');
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-selected', String(i === current));
+      dot.setAttribute('aria-label', String(i + 1));
+      dot.addEventListener('click', () => { current = i; updateMedia(); });
+      dotsEl.appendChild(dot);
+    });
+  }
+
+  function navigate(dir: number) {
+    current = (current + dir + media.length) % media.length;
+    updateMedia();
+  }
+
+  closeBtn.addEventListener('click', () => dialog.close());
+
+  dialog.addEventListener('close', () => {
+    stopPlay();
+    videoEl.pause();
+    videoEl.src = '';
+  });
+
+  dialog.addEventListener('keydown', (e: KeyboardEvent) => {
+    if (e.key === 'ArrowRight') navigate(1);
+    if (e.key === 'ArrowLeft') navigate(-1);
+  });
+
+  dialog.addEventListener('click', (e: MouseEvent) => {
+    if (e.target === dialog) dialog.close();
+  });
+
+  playBtn.addEventListener('click', () => {
+    if (timer) {
+      stopPlay();
+    } else {
+      startPlay();
+    }
+  });
+
+  function startPlay() {
+    timer = setInterval(() => navigate(1), 3000);
+    playBtn.textContent = '⏸';
+    playBtn.setAttribute('aria-label', playBtn.dataset.labelStop ?? 'Stop');
+  }
+
+  function stopPlay() {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+    playBtn.textContent = '▶';
+    playBtn.setAttribute('aria-label', playBtn.dataset.labelPlay ?? 'Play');
+  }
+</script>
