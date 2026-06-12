@@ -2,15 +2,18 @@
 import Page from '../../projects/[slug].astro';
 import { defaultLocale, locales } from '../../../i18n/utils';
 import { getCollection } from 'astro:content';
+import { hasProjectMedia } from '../../../utils/projectMedia';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projectItems');
   return locales
     .filter((lang) => lang !== defaultLocale)
     .flatMap((lang) =>
-      projects.map((project) => ({
-        params: { lang, slug: project.id },
-      }))
+      projects
+        .filter((project) => hasProjectMedia(project.data.group))
+        .map((project) => ({
+          params: { lang, slug: project.id },
+        }))
     );
 }
 ---

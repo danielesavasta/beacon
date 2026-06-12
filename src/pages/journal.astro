@@ -75,7 +75,7 @@ const days = entry?.data.days ?? [];
       <button class="lightbox__close" id="lightbox-close" aria-label={t('gallery.close')}>✕</button>
       <div class="lightbox__media-wrap">
         <img class="lightbox__img" id="lightbox-img" src="" alt="" />
-        <video class="lightbox__video" id="lightbox-video" controls playsinline></video>
+        <video class="lightbox__video" id="lightbox-video" controls playsinline hidden></video>
       </div>
       <div class="lightbox__controls">
         <div class="lightbox__dots" id="lightbox-dots" role="tablist" aria-label={t('gallery.label')}></div>
