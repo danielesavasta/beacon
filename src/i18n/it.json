@@ -68,7 +68,7 @@
     "identity_title": "Identità visiva"
   },
   "footer": {
-    "credits": "BIP — Blended Intensive Programme",
+    "credits": "BIP — Blended Intensive Programme. Web design Marcello Costa & Daniele Savasta. Support: Maurizio Schifano",
     "rights": "Tutti i diritti riservati"
   },
   "alphabet": {
@@ -86,7 +86,8 @@
   "alphabet2": {
     "title": "Alfabeto dei Valori Europei",
     "description": "Un ABC dei valori europei in 24 lingue ufficiali dell'UE — scritture latina, cirillica e greca.",
-    "subtitle": "24 lingue ufficiali UE · Latino · Cirillico · Greco"
+    "subtitle": "24 lingue ufficiali UE · Latino · Cirillico · Greco",
+    "author": "Type design: Jan Piechota. Animazione: Marcin Wichrowski"
   },
   "card": {
     "readMore": "Leggi di più"

@@ -11,25 +11,35 @@ days:
       - "/journal/day1/04.jpeg"
       - "/journal/day1/05.jpeg"
       - "/journal/day1/06.jpeg"
-      - "/journal/day1/07.jpeg"
-      - "/journal/day1/08.jpeg"
   - day: "Tuesday 9 June"
     description: "Template and character concept activities, followed by free work and presentations."
     images:
-      - "/journal/day2/WhatsApp%20Image%202026-06-10%20at%2015.07.45%20%288%29.jpeg"
-      - "/journal/day2/WhatsApp%20Image%202026-06-10%20at%2015.19.03%20%281%29.jpeg"
-      - "/journal/day2/WhatsApp%20Image%202026-06-10%20at%2015.19.03.jpeg"
-      - "/journal/day2/WhatsApp%20Image%202026-06-10%20at%2016.00.30.jpeg"
-      - "/journal/day2/WhatsApp%20Image%202026-06-10%20at%2016.07.35.jpeg"
+      - "/journal/day2/01.jpeg"
+      - "/journal/day2/02.jpeg"
+      - "/journal/day2/03.jpeg"
+      - "/journal/day2/04.jpeg"
+      - "/journal/day2/05.jpeg"
   - day: "Wednesday 10 June"
     description: "Operational day with free work sessions and character concept review."
-    images: []
+    images: 
+      - "/journal/day3/01.jpeg"
+      - "/journal/day3/02.jpeg"
+      - "/journal/day3/03.jpeg"
+      - "/journal/day3/04.jpeg"
   - day: "Thursday 11 June"
     description: "Production-focused day with dedicated animation presentations."
-    images: []
+    images: 
+      - "/journal/day4/01.jpeg"
+      - "/journal/day4/02.jpeg"
+      - "/journal/day4/03.jpeg"
+      - "/journal/day4/04.jpeg"
+      - "/journal/day4/05.jpeg"
   - day: "Friday 12 June"
-    description: "Final day with closing presentations, program wrap-up, and evening concert at the museum."
-    images: []
+    description: "Final day with closing presentations, program wrap-up."
+    images: 
+      - "/journal/day5/01.jpeg"
+      - "/journal/day5/02.jpeg"
+      - "/journal/day5/03.jpeg"
   - day: "Greetings from Palermo"
     description: "Our host: the Department of Architecture at University of Palermo."
     images: 
