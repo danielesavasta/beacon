@@ -72,7 +72,7 @@
     "rights": "Wszelkie prawa zastrzeżone"
   },
   "alphabet": {
-    "title": "Alfabet Wartości Europejskich",
+    "title": "Alfabet Wartości Europejskich - Students' Edition",
     "description": "ABC wartości europejskich w 24 oficjalnych językach UE — pismo łacińskie, cyrylica i greka.",
     "subtitle": "24 oficjalne języki UE · Łacina · Cyrylica · Greka",
     "latin_script": "Pismo łacińskie",
@@ -82,6 +82,11 @@
     "greek_script": "Pismo greckie",
     "greek_subtitle": "Grecki",
     "footnote_label": "Uwagi"
+  },
+  "alphabet2": {
+    "title": "Alfabet Wartości Europejskich",
+    "description": "ABC wartości europejskich w 24 oficjalnych językach UE — pismo łacińskie, cyrylica i greka.",
+    "subtitle": "24 oficjalne języki UE · Łacina · Cyrylica · Greka"
   },
   "card": {
     "readMore": "Czytaj więcej"

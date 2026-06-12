@@ -72,7 +72,7 @@
     "rights": "Tutti i diritti riservati"
   },
   "alphabet": {
-    "title": "Alfabeto dei Valori Europei",
+    "title": "Alfabeto dei Valori Europei - Students' Edition",
     "description": "Un ABC dei valori europei in 24 lingue ufficiali dell'UE — scritture latina, cirillica e greca.",
     "subtitle": "24 lingue ufficiali UE · Latino · Cirillico · Greco",
     "latin_script": "Scrittura latina",
@@ -82,6 +82,11 @@
     "greek_script": "Scrittura greca",
     "greek_subtitle": "Greco",
     "footnote_label": "Note"
+  },
+  "alphabet2": {
+    "title": "Alfabeto dei Valori Europei",
+    "description": "Un ABC dei valori europei in 24 lingue ufficiali dell'UE — scritture latina, cirillica e greca.",
+    "subtitle": "24 lingue ufficiali UE · Latino · Cirillico · Greco"
   },
   "card": {
     "readMore": "Leggi di più"
