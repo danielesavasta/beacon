@@ -221,7 +221,8 @@
   aspect-ratio: 4 / 3;
 }
 
-.journal-day__item img {
+.journal-day__item img,
+.journal-day__item video {
   inline-size: 100%;
   block-size: 100%;
   object-fit: cover;

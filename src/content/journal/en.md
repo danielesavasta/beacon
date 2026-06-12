@@ -32,6 +32,21 @@ days:
     images: []
   - day: "Greetings from Palermo"
     description: "Our host: the Department of Architecture at University of Palermo."
-    images: []
+    images: 
+    - "/beacon/videos/2026-06-11 10.14.44.jpg"
+    - "/beacon/videos/2026-06-11 10.14.54.jpg"
+    - "/beacon/videos/2026-06-11 10.15.00.jpg"
+    - "/beacon/videos/2026-06-11 10.15.06.jpg"
+    - "/beacon/videos/2026-06-11 10.15.16.jpg"
+    - "/beacon/videos/2026-06-11 10.15.28.jpg"
+    - "/beacon/videos/2026-06-11 10.29.32.jpg"
+    - "/beacon/videos/2026-06-11 13.28.10.jpg"
+    - "/beacon/videos/2026-06-11 13.28.12.jpg"
+    videos:
+    - "/beacon/videos/2026-06-11 10.24.38.mp4"
+    - "/beacon/videos/2026-06-11 10.17.32.mp4"
+    - "/beacon/videos/2026-06-11 13.27.40.mp4"
 
 ---
+
+    
