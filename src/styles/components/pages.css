@@ -118,6 +118,20 @@
 }
 
 
+/* Hero modifier for inline/page use (e.g. program page) */
+.hero--inline {
+  display: block;
+  height: clamp(12rem, 40vw, 24rem);
+  overflow: clip;
+}
+
+.hero--inline .hero__video {
+  inline-size: 100%;
+  width: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
 .lecture-embed {
   position: relative;
   aspect-ratio: 16 / 9;

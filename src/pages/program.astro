@@ -14,13 +14,21 @@ if (!entry) {
   throw new Error(`Missing program content for locale: ${lang}`);
 }
 const { Content } = await render(entry);
+const base = import.meta.env.BASE_URL;
 ---
 
 <Base title={t('program.title')} lang={lang} t={t}>
   <div class="page-header container">
     <h1>{t('program.title')}</h1>
   </div>
-  <section class="section container prose">
-    <Content />
+  <section class="section container prose grid">
+  <section class="hero hero--inline" aria-labelledby="hero-title">
+    <video class="hero__video" autoplay muted loop playsinline aria-hidden="true">
+      <source src={`${base}mondello.mp4`} type="video/mp4" />
+    </video>
+</section>
+  <div class="table-container">
+      <Content />
+  </div>
   </section>
 </Base>

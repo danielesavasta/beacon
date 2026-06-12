@@ -179,3 +179,26 @@ h3{
 .main--no-bg {
   background: none;
 }
+
+.prose.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow: hidden;
+  padding-top: 0;
+}
+
+.prose.grid > * {
+ grid-column: 1 / -1;
+ grid-row: 2;  
+}
+
+.prose table {
+  overflow-x: auto;
+}
+
+.prose.grid .hero {
+ grid-column: 1 / -1;
+ grid-row: 1; 
+ opacity: 0.5; 
+ height: 18rem;
+}
