@@ -4,7 +4,7 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://danielesavasta.github.io',
-  base: '/beacon/',
+  base: '/',
   vite: {
     server: {
       // Prevent stale CSS in development by disabling browser cache.
