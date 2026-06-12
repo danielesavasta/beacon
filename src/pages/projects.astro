@@ -26,6 +26,7 @@ const projectItems = (await getCollection('projectItems')).filter(p => hasProjec
     <h1>{t('projects.title')}</h1>
   </div>
   <section class="section container">
+    <h3>Alphabets</h3>
     <div class="card-grid">
       <article class="card">
         <div class="card__body">
@@ -44,11 +45,12 @@ const projectItems = (await getCollection('projectItems')).filter(p => hasProjec
       </article>
     </div>
   </section>
-  <section class="section container prose">
+  <!--<section class="section container prose">
     <Content />
-  </section>
+  </section>-->
   {projectItems.length > 0 && (
     <section class="section container">
+      <h3>Group Concepts</h3>
       <div class="card-grid">
         {projectItems.map((project) => (
           <article class="card">
