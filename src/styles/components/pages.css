@@ -17,7 +17,7 @@
 
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(14rem,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(16rem,1fr));
   gap: var(--space-6);
 }
 
@@ -41,6 +41,7 @@
   display: block;
   object-fit: contain;
   margin-block-end: var(--space-3);
+  width: 100%;
 }
 
 .partner-card__location {
