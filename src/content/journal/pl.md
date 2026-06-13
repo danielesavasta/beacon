@@ -13,7 +13,6 @@ days:
   - day: "Wtorek 9 czerwca"
     description: "Ćwiczenia z szablonem i koncepcją postaci, a następnie praca własna i prezentacje."
     images:
-    images:
       - "/journal/day2/01.jpeg"
       - "/journal/day2/02.jpeg"
       - "/journal/day2/03.jpeg"
