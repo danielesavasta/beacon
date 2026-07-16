@@ -48,9 +48,9 @@ description: "Full schedule of the online and in-person phases of the Beacon BIP
 
 | Time        | Monday       | Tuesday                                   | Wednesday                          | Thursday                     | Friday             |
 |-------------|--------------|-------------------------------------------|------------------------------------|------------------------------|--------------------|
-| 11:00–12:00 |              | Free work / Cinzia's lesson               | Free work                          | Free work                    | Free work          |
-| 12:00–13:00 |              |                                           |                                    |                              | Final presentation |
-| 13:00–14:00 | *Lunch*      | *Lunch*                                   | *Lunch*                            | *Lunch*                      | *Lunch*            |
-| 15:00–16:00 |              | Template for a Character Concept / Maria's lesson | Free work                  | Free work                    |                    |
+| 09:00–12:00 |      Introduction        | Free work / Cinzia's lesson               | Free work                          | Free work                    | Free work          |
+| 12:00–13:00 |    Free Work          |     Free Work                                      |    Free Work                                |      Free Work                        | Final presentation |
+| 13:00–14:00 | *Lunch*      | *Lunch*                                   | *Lunch*                            | *Lunch*                      | *Lunch*            |Free Work
+| 15:00–16:00 |     Free Work         | Template for a Character Concept / Maria's lesson | Free work                  | Free work                    |     Free Work               | 
 | 17:00–18:00 | Presentation | Presentation                              | Presentation — Character Concept   | Presentation — Animation     |                    |
 | 19:00       |              |                                           |                                    |                              | Concert in Archaeological Museum |

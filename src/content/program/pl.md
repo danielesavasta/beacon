@@ -47,9 +47,9 @@ description: "Pełny harmonogram faz online i stacjonarnej Beacon BIP."
 
 | Godzina     | Poniedziałek | Wtorek                                          | Środa                                     | Czwartek                         | Piątek             |
 |-------------|--------------|------------------------------------------------|-------------------------------------------|----------------------------------|--------------------|
-| 11:00–12:00 |              | Praca własna / lekcja Cinzii                   | Praca własna                              | Praca własna                     | Praca własna       |
-| 12:00–13:00 |              |                                                |                                           |                                  | Prezentacja końcowa |
+| 09:00–12:00 |    Wprowadzenie          | Praca własna / lekcja Cinzii                   | Praca własna                              | Praca własna                     | Praca własna       | Praca własna
+| 12:00–13:00 |   Praca własna           |           Praca własna                                     |       Praca własna                                    |     Praca własna                             | Prezentacja końcowa |
 | 13:00–14:00 | *Obiad*      | *Obiad*                                        | *Obiad*                                   | *Obiad*                          | *Obiad*            |
-| 15:00–16:00 |              | Szablon koncepcji postaci / lekcja Marii       | Praca własna                              | Praca własna                     |                    |
+| 15:00–16:00 |     Praca własna         | Szablon koncepcji postaci / lekcja Marii       | Praca własna                              | Praca własna                     |          Praca własna          |
 | 17:00–18:00 | Prezentacja  | Prezentacja                                    | Prezentacja — Koncepcja postaci           | Prezentacja — Animacja           |                    |
 | 19:00       |              |                                                |                                           |                                  | Koncert w Muzeum Archeologicznym |

@@ -48,9 +48,9 @@ description: "Calendario completo delle fasi online e in presenza del Beacon BIP
 
 | Orario      | Lunedì       | Martedì                                        | Mercoledì                              | Giovedì                          | Venerdì            |
 |-------------|--------------|------------------------------------------------|----------------------------------------|----------------------------------|--------------------|
-| 11:00–12:00 |              | Lavoro libero / Lezione di Cinzia              | Lavoro libero                          | Lavoro libero                    | Lavoro libero      |
-| 12:00–13:00 |              |                                                |                                        |                                  | Presentazione finale |
+| 09:00–12:00 |       Introduzione       | Lavoro libero / Lezione di Cinzia              | Lavoro libero                          | Lavoro libero                    | Lavoro libero      | Lavoro libero
+| 12:00–13:00 |    Lavoro libero          |           Lavoro libero                                     |      Lavoro libero                                  |    Lavoro libero                              | Presentazione finale |
 | 13:00–14:00 | *Pranzo*     | *Pranzo*                                       | *Pranzo*                               | *Pranzo*                         | *Pranzo*           |
-| 15:00–16:00 |              | Template per un concetto di personaggio / Lezione di Maria | Lavoro libero             | Lavoro libero                    |                    |
+| 15:00–16:00 |     Lavoro libero         | Template per un concetto di personaggio / Lezione di Maria | Lavoro libero             | Lavoro libero                    |      Lavoro libero              |
 | 17:00–18:00 | Presentazione | Presentazione                                 | Presentazione — Concetto di personaggio | Presentazione — Animazione      |                    |
 | 19:00       |              |                                                |                                        |                                  | Concerto al Museo Archeologico |
