@@ -15,7 +15,7 @@ description: "Pełny harmonogram faz online i stacjonarnej Beacon BIP."
 | 16:30   | Przerwa |
 | 17:00   | *Język obrazkowy jako wspólny język* — Dr Hab. Jan Piechota i Dr Hab. Ewa Satalecka |
 | 17:30   | *Otto Neurath jako "Ambasador Szczęścia"* — Martin Foessleitner |
-| 18:00   | Check-out |
+| 20:00   | Check-out |
 
 #### Środa 13 maja
 
@@ -27,7 +27,7 @@ description: "Pełny harmonogram faz online i stacjonarnej Beacon BIP."
 | 16:30   | Przerwa |
 | 17:00   | *Visual* — Ruedi i Vera Baur |
 | 17:30   | Równoległe sesje projektowe |
-| 18:00   | Check-out |
+| 20:00   | Check-out |
 
 #### Piątek 15 maja
 
@@ -39,7 +39,7 @@ description: "Pełny harmonogram faz online i stacjonarnej Beacon BIP."
 | 16:30   | Przerwa |
 | 17:00   | *Wizualne narzędzia aktywacji sytuacji kryzysowych* — Rodrigo Ramírez |
 | 17:30   | Inauguracja fazy stacjonarnej |
-| 18:00   | Check-out |
+| 20:00   | Check-out |
 
 ## Faza stacjonarna
 

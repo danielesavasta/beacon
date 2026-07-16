@@ -16,7 +16,7 @@ description: "Full schedule of the online and in-person phases of the Beacon BIP
 | 16:30 | Break |
 | 17:00 | *Picture Language as a Common Language* — Dr Hab. Jan Piechota and Dr Hab. Ewa Satalecka |
 | 17:30 | *Otto Neurath as "Ambassador of Happiness"* — Martin Foessleitner |
-| 18:00 | Check-out |
+| 20:00 | Check-out |
 
 #### Wednesday 13th May
 
@@ -28,7 +28,7 @@ description: "Full schedule of the online and in-person phases of the Beacon BIP
 | 16:30 | Break |
 | 17:00 | *Visual* — Ruedi and Vera Baur |
 | 17:30 | Parallel design sessions |
-| 18:00 | Check-out |
+| 20:00 | Check-out |
 
 #### Friday 15th May
 
@@ -40,7 +40,7 @@ description: "Full schedule of the online and in-person phases of the Beacon BIP
 | 16:30 | Break |
 | 17:00 | *Visual Tools for Activating Emergencies* — Rodrigo Ramírez |
 | 17:30 | In-person phase kick-off |
-| 18:00 | Check-out |
+| 20:00 | Check-out |
 
 ## In-person phase
 

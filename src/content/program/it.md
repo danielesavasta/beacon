@@ -16,7 +16,7 @@ description: "Calendario completo delle fasi online e in presenza del Beacon BIP
 | 16:30  | Pausa |
 | 17:00  | *Il linguaggio delle immagini come lingua comune* — Dr Hab. Jan Piechota e Dr Hab. Ewa Satalecka |
 | 17:30  | *Otto Neurath come "Ambasciatore della Felicità"* — Martin Foessleitner |
-| 18:00  | Check-out |
+| 20:00  | Check-out |
 
 #### Mercoledì 13 maggio
 
@@ -28,7 +28,7 @@ description: "Calendario completo delle fasi online e in presenza del Beacon BIP
 | 16:30  | Pausa |
 | 17:00  | *Visual* — Ruedi e Vera Baur |
 | 17:30  | Sessioni parallele di design |
-| 18:00  | Check-out |
+| 20:00  | Check-out |
 
 #### Venerdì 15 maggio
 
@@ -40,7 +40,7 @@ description: "Calendario completo delle fasi online e in presenza del Beacon BIP
 | 16:30  | Pausa |
 | 17:00  | *Strumenti visivi per attivare le emergenze* — Rodrigo Ramírez |
 | 17:30  | Avvio fase in presenza |
-| 18:00  | Check-out |
+| 20:00  | Check-out |
 
 ## Fase in presenza
 
