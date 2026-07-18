@@ -6,6 +6,8 @@ import '../styles/utilities.css';
 import '../styles/components/pages.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 import { type Locale } from '../i18n/utils';
 
 export interface Props {
@@ -58,5 +60,7 @@ const mainBackgroundImage = `url('${base}beacon_logo.svg')`;
       <slot />
     </main>
     <Footer lang={lang} t={t} />
+    <CookieConsent lang={lang} t={t} />
+    <Analytics measurementId={import.meta.env.PUBLIC_GA_MEASUREMENT_ID} />
   </body>
 </html>

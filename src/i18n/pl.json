@@ -70,7 +70,13 @@
   "footer": {
     "credits": "BIP — Blended Intensive Programme.",
     "rights": "Wszelkie prawa zastrzeżone.",
-    "web": "Web design Marcello Costa & Daniele Savasta. Support: Maurizio Schifano."
+    "web": "Web design Marcello Costa & Daniele Savasta. Support: Maurizio Schifano.",
+    "cookiePrefs": "Preferencje dotyczące plików cookie"
+  },
+  "cookieConsent": {
+    "message": "Używamy Google Analytics, aby zrozumieć, jak odwiedzający korzystają z tej strony. Pliki cookie analityczne są ustawiane tylko po wyrażeniu zgody.",
+    "accept": "Akceptuj",
+    "reject": "Odrzuć"
   },
   "alphabet": {
     "title": "Alfabet Wartości Europejskich - Students' Edition",

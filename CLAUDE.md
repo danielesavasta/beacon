@@ -52,6 +52,7 @@ For details of each area, read the files in `references/` when relevant to the r
 - **Homepage logo behavior** changed: header logo is hidden on homepages only, and a logo overlay inside the hero appears only after user scroll.
 - **Hero title/subtitle** updated in all three JSON translation files to use the full project title and project code.
 - **Favicon** updated to use `beacon_logo.svg`.
+- **Google Analytics** installed, gated behind a GDPR cookie-consent banner (`src/components/CookieConsent.astro` + `src/components/Analytics.astro`). GA only loads after the visitor accepts; the "Cookie preferences" link in the footer reopens the banner. Measurement ID is read from `PUBLIC_GA_MEASUREMENT_ID`, set via the `GA_MEASUREMENT_ID` GitHub secret in `.github/workflows/deploy.yml`.
 
 ### Build status
 - `npm run build` — ✓ 15 pages built successfully (5 pages × 3 locales)

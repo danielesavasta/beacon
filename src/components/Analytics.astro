@@ -1,0 +1,49 @@
+---
+export interface Props {
+  measurementId?: string;
+}
+
+const { measurementId } = Astro.props;
+---
+
+{measurementId && (
+  <>
+    <div id="analytics-config" data-measurement-id={measurementId} hidden></div>
+    <script>
+      declare global {
+        interface Window {
+          dataLayer: unknown[][];
+        }
+      }
+
+      const STORAGE_KEY = 'beacon-consent';
+      let gaLoaded = false;
+
+      const loadGA = () => {
+        if (gaLoaded) return;
+
+        const config = document.querySelector<HTMLElement>('#analytics-config');
+        const measurementId = config?.dataset.measurementId;
+        if (!measurementId) return;
+
+        gaLoaded = true;
+
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        const gtag = (...args: unknown[]) => window.dataLayer.push(args);
+        gtag('js', new Date());
+        gtag('config', measurementId, { anonymize_ip: true });
+      };
+
+      if (localStorage.getItem(STORAGE_KEY) === 'granted') {
+        loadGA();
+      }
+
+      window.addEventListener('beacon:consent-granted', loadGA);
+    </script>
+  </>
+)}

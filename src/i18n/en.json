@@ -72,7 +72,13 @@
     "credits": "BIP — Blended Intensive Programme.",
     "rights": "All rights reserved.",
     "disclaimer": "Beacon is a Blended Intensive Programme (BIP) bringing together design students and academics from nine partner universities across Europe and Latin America. Over an online phase and an in-person week in Palermo, participants explore picture language as a shared visual communication tool. The project code is **BIP 2024-1-IT02-KA131-HED-000197121-2**, funded by the Erasmus+ programme.",
-    "web": "Web design Marcello Costa & Daniele Savasta. Support: Maurizio Schifano."
+    "web": "Web design Marcello Costa & Daniele Savasta. Support: Maurizio Schifano.",
+    "cookiePrefs": "Cookie preferences"
+  },
+  "cookieConsent": {
+    "message": "We use Google Analytics to understand how visitors use this site. Analytics cookies are only set if you accept.",
+    "accept": "Accept",
+    "reject": "Reject"
   },
   "alphabet": {
     "title": "European Values Alphabet - Students' Edition",

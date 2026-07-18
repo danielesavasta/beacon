@@ -31,3 +31,19 @@
   max-inline-size: none;
   margin-bottom: var(--space-6);
 }
+
+.site-footer__cookie-prefs {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.site-footer__cookie-prefs:focus-visible {
+  outline: 0.125rem solid var(--color-white);
+  outline-offset: var(--space-1);
+}

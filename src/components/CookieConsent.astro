@@ -1,0 +1,53 @@
+---
+import { type Locale } from '../i18n/utils';
+import '../styles/components/cookie-consent.css';
+
+export interface Props {
+  lang: Locale;
+  t: (key: string) => string;
+}
+
+const { t } = Astro.props;
+---
+
+<div class="cookie-consent" id="cookie-consent" role="dialog" aria-live="polite" aria-labelledby="cookie-consent-title" hidden>
+  <div class="cookie-consent__inner container">
+    <p class="cookie-consent__message" id="cookie-consent-title">{t('cookieConsent.message')}</p>
+    <div class="cookie-consent__actions">
+      <button type="button" class="cookie-consent__reject" id="cookie-consent-reject">{t('cookieConsent.reject')}</button>
+      <button type="button" class="cookie-consent__accept" id="cookie-consent-accept">{t('cookieConsent.accept')}</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const STORAGE_KEY = 'beacon-consent';
+
+  const banner = document.querySelector<HTMLElement>('#cookie-consent');
+  const acceptBtn = document.querySelector<HTMLButtonElement>('#cookie-consent-accept');
+  const rejectBtn = document.querySelector<HTMLButtonElement>('#cookie-consent-reject');
+
+  const getConsent = () => localStorage.getItem(STORAGE_KEY);
+
+  const showBanner = () => banner?.removeAttribute('hidden');
+  const hideBanner = () => banner?.setAttribute('hidden', '');
+
+  if (!getConsent()) {
+    showBanner();
+  }
+
+  acceptBtn?.addEventListener('click', () => {
+    localStorage.setItem(STORAGE_KEY, 'granted');
+    hideBanner();
+    window.dispatchEvent(new Event('beacon:consent-granted'));
+  });
+
+  rejectBtn?.addEventListener('click', () => {
+    localStorage.setItem(STORAGE_KEY, 'denied');
+    hideBanner();
+  });
+
+  window.addEventListener('beacon:open-consent', () => {
+    showBanner();
+  });
+</script>

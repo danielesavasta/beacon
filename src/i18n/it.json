@@ -70,7 +70,13 @@
   "footer": {
     "credits": "BIP — Blended Intensive Programme.",
     "rights": "Tutti i diritti riservati.",
-    "web": "Progetto Web Marcello Costa & Daniele Savasta. Supporto: Maurizio Schifano."
+    "web": "Progetto Web Marcello Costa & Daniele Savasta. Supporto: Maurizio Schifano.",
+    "cookiePrefs": "Preferenze cookie"
+  },
+  "cookieConsent": {
+    "message": "Utilizziamo Google Analytics per capire come i visitatori usano questo sito. I cookie di analisi vengono impostati solo se accetti.",
+    "accept": "Accetta",
+    "reject": "Rifiuta"
   },
   "alphabet": {
     "title": "Alfabeto dei Valori Europei - Students' Edition",

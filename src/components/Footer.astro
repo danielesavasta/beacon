@@ -15,8 +15,14 @@ const year = new Date().getFullYear();
   <div class="site-footer__inner container">
     <p class="site-footer__disclaimer">{t('footer.disclaimer')}</p>
     
-    <p class="site-footer__credits">{t('footer.credits')}</p>    
+    <p class="site-footer__credits">{t('footer.credits')}</p>
     <!-- <p class="site-footer__rights"></p>-->
-    <p class="site-footer__rights">{t('footer.web')} | © {year} {t('footer.rights')}</p>
+    <p class="site-footer__rights">{t('footer.web')} | © {year} {t('footer.rights')} | <button type="button" class="site-footer__cookie-prefs" id="footer-cookie-prefs">{t('footer.cookiePrefs')}</button></p>
   </div>
 </footer>
+
+<script>
+  document.querySelector('#footer-cookie-prefs')?.addEventListener('click', () => {
+    window.dispatchEvent(new Event('beacon:open-consent'));
+  });
+</script>
